@@ -11,6 +11,9 @@ class Application(models.Model):
       max_length=10,
       blank=False, null=False
     )
+    code=models.IntegerField(
+      blank=False, null=False
+    )
     content=models.TextField(
       blank=False, null=False
     )
