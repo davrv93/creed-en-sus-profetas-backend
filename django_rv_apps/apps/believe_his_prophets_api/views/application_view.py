@@ -44,7 +44,7 @@ class ApplicationViewSet(viewsets.ModelViewSet):
                 # Get de Application
                 queryset = Application.objects.filter(
                                 version=param_version,
-                                language=param_language,
+                                language__code_iso=param_language,
                                 is_active='1'
                                 )
                 serializer = ApplicationSerializer(queryset, many=True)
