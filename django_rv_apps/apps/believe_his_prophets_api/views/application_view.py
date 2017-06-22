@@ -67,5 +67,6 @@ class ApplicationViewSet(viewsets.ModelViewSet):
             obj_response={
                 'condition':False
             }
+        print('obj_response', obj_response)
 
         return Response(obj_response)
