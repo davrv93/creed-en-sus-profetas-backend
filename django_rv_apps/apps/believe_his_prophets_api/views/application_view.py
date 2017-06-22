@@ -52,11 +52,11 @@ class ApplicationViewSet(viewsets.ModelViewSet):
                                 )
                 serializer = ApplicationSerializer(queryset, many=True)
                 obj_version=serializer.data
-                print('obj_version ', obj_version)
+                print('obj_version ', obj_version[0])
                 if obj_version:
                     obj_response={
-                        'version':obj_version['version'],
-                        'content':obj_version['content'],
+                        'version':obj_version[0]['version'],
+                        'content':obj_version[0]['content'],
                         'condition':True
                     }
                     print('obj_response 1', obj_response)
