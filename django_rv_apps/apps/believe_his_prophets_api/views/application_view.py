@@ -39,6 +39,7 @@ class ApplicationViewSet(viewsets.ModelViewSet):
             serializer_language= LanguageSerializer(queryset_language,
                                         many=False)
             obj_language=serializer_language.data
+            print('obj_language', obj_language)
 
             if obj_language:
                 # Get de Application
