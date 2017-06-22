@@ -43,8 +43,8 @@ class ApplicationViewSet(viewsets.ModelViewSet):
             if obj_language:
                 # Get de Application
                 queryset = Application.objects.filter(
-                                version=version,
-                                language=param_version,
+                                version=param_version,
+                                language=param_language,
                                 is_active='1'
                                 )
                 serializer = ApplicationSerializer(queryset, many=True)
