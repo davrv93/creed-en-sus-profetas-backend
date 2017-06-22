@@ -20,7 +20,7 @@ class Application(models.Model):
         db_column='language_id')
     is_active= models.CharField(
         max_length=1,
-        blank=False, null=False
+        blank=False, null=False,
         default='1'
     )
 
