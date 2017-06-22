@@ -16,7 +16,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Application
         fields=('id','version','language',
-        'content')
+        'content','code',)
 
 class ApplicationViewSet(viewsets.ModelViewSet):
     queryset = Application.objects.all().prefetch_related('language')
@@ -56,6 +56,7 @@ class ApplicationViewSet(viewsets.ModelViewSet):
                     obj_response={
                         'version':obj_version['version'],
                         'content':obj_version['content'],
+                        'content':obj_version['code'],
                         'condition':True
                     }
                 else:
