@@ -34,6 +34,8 @@ class ApplicationViewSet(viewsets.ModelViewSet):
         # Obteniendo idioma
         param_language=request.query_params.get('language','')
         param_version=request.query_params.get('version','')
+        print('param_language status',param_language)
+        print('param_version status',param_version)
         if param_language:
             queryset_language = Language.objects.get(code_iso=param_language)
             serializer_language= LanguageSerializer(queryset_language,
