@@ -19,7 +19,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
         'content')
 
 class ApplicationViewSet(viewsets.ModelViewSet):
-    queryset = Application.objects.all().prefetch_related('book','language')
+    queryset = Application.objects.all().prefetch_related('language')
     serializer_class = ApplicationSerializer
     filter_backends = (filters.SearchFilter, django_filters.DjangoFilterBackend,)
     filter_fields = ('id','version','content')
