@@ -59,14 +59,18 @@ class ApplicationViewSet(viewsets.ModelViewSet):
                         'content':obj_version['content'],
                         'condition':True
                     }
+                    print('obj_response 1', obj_response)
+
                 else:
                     obj_response={
                         'condition':False
                     }
+                    print('obj_response 2', obj_response)
         else:
             obj_response={
                 'condition':False
             }
-        print('obj_response', obj_response)
+            print('obj_response 3', obj_response)
+        print('obj_response 4 ', obj_response)
 
         return Response(obj_response)
