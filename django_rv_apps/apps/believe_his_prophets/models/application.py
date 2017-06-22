@@ -18,6 +18,11 @@ class Application(models.Model):
         Language,
         blank=False, null=False,
         db_column='language_id')
+    is_active= models.CharField(
+        max_length=1,
+        blank=False, null=False
+        default='1'
+    )
 
     class Meta:
         verbose_name = 'Application'
