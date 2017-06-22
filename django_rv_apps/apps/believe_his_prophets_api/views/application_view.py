@@ -15,8 +15,8 @@ class ApplicationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Application
-        fields=('id','version','language',
-        'content','code',)
+        fields=('id','version','language','code',
+        'content')
 
 class ApplicationViewSet(viewsets.ModelViewSet):
     queryset = Application.objects.all().prefetch_related('language')
@@ -46,26 +46,32 @@ class ApplicationViewSet(viewsets.ModelViewSet):
             if obj_language:
                 # Get de Application
                 queryset = Application.objects.filter(
+                                version=param_version,
                                 language__code_iso=param_language,
                                 is_active='1'
                                 )
                 serializer = ApplicationSerializer(queryset, many=True)
                 obj_version=serializer.data
-                print('obj_version ', obj_version)
+                print('obj_version ', obj_version[0])
                 if obj_version:
                     obj_response={
-                        'version':obj_version['version'],
-                        'content':obj_version['content'],
-                        'content':obj_version['code'],
+                        'version':obj_version[0]['version'],
+                        'content':obj_version[0]['content'],
+                        'code':obj_version[0]['code'],
                         'condition':True
                     }
+                    print('obj_response 1', obj_response)
+
                 else:
                     obj_response={
                         'condition':False
                     }
+                    print('obj_response 2', obj_response)
         else:
             obj_response={
                 'condition':False
             }
+            print('obj_response 3', obj_response)
+        print('obj_response 4 ', obj_response)
 
         return Response(obj_response)
