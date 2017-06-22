@@ -29,33 +29,39 @@ class ApplicationViewSet(viewsets.ModelViewSet):
     @list_route(url_path='status')
     def list_status(self, request):
         # Declarando variables e instanciando
+        obj_response={}
         language=''
         # Obteniendo idioma
         param_language=request.query_params.get('language','')
         param_version=request.query_params.get('version','')
-        queryset_language = Language.objects.get(code_iso=param_language)
-        serializer_language= LanguageSerializer(queryset_language,
-                                    many=False)
-        obj_language=serializer_language.data
+        if param_language:
+            queryset_language = Language.objects.get(code_iso=param_language)
+            serializer_language= LanguageSerializer(queryset_language,
+                                        many=False)
+            obj_language=serializer_language.data
 
-        if obj_language:
-            # Get de Application
-            queryset = Application.objects.filter(
-                            version=version,
-                            language=param_version,
-                            is_active='1'
-                            )
-            serializer = ApplicationSerializer(queryset, many=True)
-            obj_version=serializer.data
-            if obj_version:
-                obj_response={
-                    'version':obj_version['version'],
-                    'content':obj_version['content'],
-                    'condition':True
-                }
-            else:
-                obj_response={
-                    'condition':False
-                }
+            if obj_language:
+                # Get de Application
+                queryset = Application.objects.filter(
+                                version=version,
+                                language=param_version,
+                                is_active='1'
+                                )
+                serializer = ApplicationSerializer(queryset, many=True)
+                obj_version=serializer.data
+                if obj_version:
+                    obj_response={
+                        'version':obj_version['version'],
+                        'content':obj_version['content'],
+                        'condition':True
+                    }
+                else:
+                    obj_response={
+                        'condition':False
+                    }
+        else:
+            obj_response={
+                'condition':False
+            }
 
         return Response(obj_response)
