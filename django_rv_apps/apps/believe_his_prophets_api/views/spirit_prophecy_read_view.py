@@ -21,9 +21,7 @@ class SpiritProphecyReadSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SpiritProphecyRead
-        fields=('id','spirit_prophecy','spirit_prophecy_chapter',
-        'spirit_prophecy_chapter__chapter',
-        'data','date_read','language')
+        fields='__all__'
 
 class SpiritProphecyReadViewSet(viewsets.ModelViewSet):
     queryset = SpiritProphecyRead.objects.all()
@@ -100,7 +98,7 @@ class SpiritProphecyReadViewSet(viewsets.ModelViewSet):
             print('obj_book',obj_book)
             # Build de Header
             obj_header={
-                'book_name': obj_book['translate_name'],
+                'book_name': obj_book['name'],
                 'book':obj_book['name'],
                 #'chapter':str(reading[0]['start_chapter'])
             }

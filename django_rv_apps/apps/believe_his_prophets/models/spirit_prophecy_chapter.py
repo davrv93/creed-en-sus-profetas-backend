@@ -2,6 +2,7 @@
 from django.db import models
 from django.db.models.deletion import ProtectedError
 from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy import SpiritProphecy
+from django_rv_apps.apps.believe_his_prophets.models.language import Language
 
 class SpiritProphecyChapter(models.Model):
     id = models.AutoField(
@@ -16,9 +17,12 @@ class SpiritProphecyChapter(models.Model):
         blank=False, null=False)
     translate_abrev = models.CharField(
         max_length=50,
-        blank=False, null=False)
+        blank=True, null=True)
     translate_name = models.CharField(
         max_length=50,
+        blank=True, null=True)
+    language = models.ForeignKey(
+        Language, db_column='language_id',
         blank=True, null=True)
     chapter = models.IntegerField(
         blank=True, null=True)

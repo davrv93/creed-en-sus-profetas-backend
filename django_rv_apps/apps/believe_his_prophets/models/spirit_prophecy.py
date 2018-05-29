@@ -1,6 +1,7 @@
 
 from django.db import models
 from django.db.models.deletion import ProtectedError
+from django_rv_apps.apps.believe_his_prophets.models.language import Language
 
 class SpiritProphecy(models.Model):
     id = models.AutoField(
@@ -11,12 +12,15 @@ class SpiritProphecy(models.Model):
         blank=False, null=False)
     abrev = models.CharField(
         max_length=15,
-        blank=False, null=False)
+        blank=True, null=True)
     translate_abrev = models.CharField(
         max_length=50,
-        blank=False, null=False)
+        blank=True, null=True)
     translate_name = models.CharField(
         max_length=50,
+        blank=True, null=True)
+    language = models.ForeignKey(
+        Language, db_column='language_id',
         blank=True, null=True)
 
     class Meta:

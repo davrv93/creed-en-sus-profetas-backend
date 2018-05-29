@@ -11,14 +11,14 @@ class BookSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Book
-        fields=('id','name','translate_name')
+        fields=('id','name','translate_name','testament',)
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     filter_backends = (filters.SearchFilter, django_filters.DjangoFilterBackend,)
     filter_fields = ('id','name','testament',)
-    search_fields = ('name',)
+    search_fields = ('name','testament',)
 
     def update(self, request, pk=None):
         try:

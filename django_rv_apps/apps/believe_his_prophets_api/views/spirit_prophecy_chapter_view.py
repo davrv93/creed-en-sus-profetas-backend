@@ -11,8 +11,7 @@ class SpiritProphecyChapterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SpiritProphecyChapter
-        fields=('id','spirit_prophecy','name','translate_abrev',
-        'translate_name','chapter')
+        fields='__all__'
 
 class SpiritProphecyChapterViewSet(viewsets.ModelViewSet):
     queryset = SpiritProphecyChapter.objects.all()

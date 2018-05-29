@@ -18,6 +18,13 @@ class Chapter(models.Model):
         blank=False, null=False)
     audio = models.FileField(
         blank=True, null=True)
+    commentary = models.NullBooleanField(
+        blank=True, null=True)
+    commentary_file = models.FileField(
+        blank=True, null=True)
+    commentary_url = models.CharField(
+        max_length=500,
+        blank=True, null=True)
 
     class Meta:
         verbose_name = 'Chapter'
@@ -42,6 +49,7 @@ class Chapter(models.Model):
 
     def __str__(self):
         return (self.book.__str__() + '-' + str(self.chapter)
+                + '-'+str(self.language.__str__())
                )
 
     def delete(self, *args, **kwargs):
