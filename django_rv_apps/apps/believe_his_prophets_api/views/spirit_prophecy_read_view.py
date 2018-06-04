@@ -81,7 +81,7 @@ class SpiritProphecyReadViewSet(viewsets.ModelViewSet):
         reading=SpiritProphecyRead.objects.filter(language__code_iso=param_language,
                                           date_read=datenow
                                          ).count()
-        return Response({'count':reading}
+        return Response({'count':reading})
                     
 
 
