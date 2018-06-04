@@ -24,6 +24,14 @@ class SpiritProphecyRead(models.Model):
     language = models.ForeignKey(
         Language, db_column='language_id',
         blank=True, null=True)
+    title= models.CharField(
+        blank=True, null=True,
+        max_length=120
+    )
+    chapter_title = models.CharField(
+        blank=True, null=True,
+        max_length=120
+    )
 
     class Meta:
         verbose_name = 'SpiritProphecyRead'
