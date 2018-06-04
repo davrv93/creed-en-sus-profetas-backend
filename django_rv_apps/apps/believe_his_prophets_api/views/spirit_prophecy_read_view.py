@@ -60,6 +60,31 @@ class SpiritProphecyReadViewSet(viewsets.ModelViewSet):
         else:
             raise ParseError(', '.join(list(promise_list)))
 
+    @list_route(url_path='status')
+    def get_status(self, request):
+        obj_reading={}
+        obj_book={}
+        language=''
+        # Obteniendo fecha por defecto
+        param_date=request.query_params.get('date','')
+        param_language=request.query_params.get('language','')
+        if param_date:
+            datenow=param_date
+            print('param_date', datenow)
+        else:
+            i = datetime.now()
+            datenow=i.strftime('%Y-%m-%d')
+        
+        if param_language=='':
+            param_language='ES'
+
+        reading=SpiritProphecyRead.objects.filter(language__code_iso=param_language,
+                                          date_read=datenow
+                                         ).count()
+        return Response({'count':reading}
+                    
+
+
     @list_route(url_path='reading')
     def list_reading_verse(self, request):
         # Declarando variables e instanciando
@@ -78,7 +103,7 @@ class SpiritProphecyReadViewSet(viewsets.ModelViewSet):
         param_language=request.query_params.get('language','')
         if param_language=='':
             param_language='ES'
-        obj_language = Language.objects.filter(code_iso=str(param_language)).values()
+        obj_language = Language.objects.filter(code_iso=str(param_language)).values().first()
         obj_header={}
         obj_reading=SpiritProphecyRead.objects.filter(language__code_iso=param_language,
                                           date_read=datenow

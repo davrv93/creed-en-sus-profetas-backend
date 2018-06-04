@@ -169,6 +169,23 @@ class VerseViewSet(viewsets.ModelViewSet):
         return Response(content)
 
 
+    @list_route(url_path='status')
+    def get_status(self, request):
+        # Declarando variables e instanciando
+        param_date=request.query_params.get('date','')
+        if param_date:
+            datenow=param_date
+            print('param_date', datenow)
+        else:
+            i = datetime.now()
+            datenow=i.strftime('%Y-%m-%d')
+        # Obteniendo idioma
+        reading=BibleRead.objects.filter(
+                        start_date=datenow).count()
+
+        return Response({'count':reading})
+
+
     @list_route(url_path='get_verses_from_chap')
     def get_verses_from_chap(self, request):
         # Declarando variables e instanciando
