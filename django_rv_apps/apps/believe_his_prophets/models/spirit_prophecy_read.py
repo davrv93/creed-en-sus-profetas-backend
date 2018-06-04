@@ -32,6 +32,9 @@ class SpiritProphecyRead(models.Model):
         blank=True, null=True,
         max_length=120
     )
+    chapter = models.IntegerField(
+        blank=True, null=True
+    )
 
     class Meta:
         verbose_name = 'SpiritProphecyRead'
