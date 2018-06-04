@@ -78,9 +78,9 @@ class SpiritProphecyReadViewSet(viewsets.ModelViewSet):
         param_language=request.query_params.get('language','')
         if param_language=='':
             param_language='ES'
-        obj_language = Language.objects.filter(code_iso=param_language).values()
+        obj_language = Language.objects.filter(code_iso=str(param_language)).values()
         obj_header={}
-        obj_reading=SpiritProphecyRead.objects.filter(language=param_language,
+        obj_reading=SpiritProphecyRead.objects.filter(language__code_iso=param_language,
                                           date_read=datenow
                                          ).values().first()
         print('obj_reading',obj_reading)
