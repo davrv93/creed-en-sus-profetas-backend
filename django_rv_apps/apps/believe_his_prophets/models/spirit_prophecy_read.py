@@ -16,7 +16,7 @@ class SpiritProphecyRead(models.Model):
     spirit_prophecy_chapter = models.ForeignKey(
         SpiritProphecyChapter,
         db_column='spirit_prophecy_chapter_id',
-        blank=False, null=False)
+        blank=True, null=True)
     data = models.TextField(
         blank=False, null=False)
     date_read = models.DateField(
