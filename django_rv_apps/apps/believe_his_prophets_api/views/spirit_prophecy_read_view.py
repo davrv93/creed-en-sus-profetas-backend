@@ -78,34 +78,21 @@ class SpiritProphecyReadViewSet(viewsets.ModelViewSet):
         param_language=request.query_params.get('language','')
         if param_language=='':
             param_language='ES'
-        queryset_language = Language.objects.get(code_iso=param_language)
-        serializer_language= LanguageSerializer(queryset_language,
-                                    many=False)
-        obj_language=serializer_language.data
-        obj_reading=SpiritProphecyRead.objects.filter(language=obj_language['id'],
-                        date_read=datenow).values()
+        obj_language = Language.objects.filter(code_iso=param_language).values()
+        obj_header={}
+        obj_reading=SpiritProphecyRead.objects.filter(language=param_language,
+                                          date_read=datenow
+                                         ).values().first()
         print('obj_reading',obj_reading)
 
         if obj_reading:
-            # Get de Chapter
-            queryset= SpiritProphecyChapter.objects.get(spirit_prophecy=obj_reading[0]['spirit_prophecy_id'],id=obj_reading[0]['spirit_prophecy_chapter_id'])
-            print('queryset spirit',queryset)
-            serializer_chapter= SpiritProphecyChapterSerializer(queryset,many=False)
-            obj_chapter=serializer_chapter.data
-            queryset = SpiritProphecy.objects.get(id=obj_reading[0]['spirit_prophecy_id'])
-            serializer_book= SpiritProphecySerializer(queryset,many=False)
-            obj_book=serializer_book.data
-            print('obj_book',obj_book)
-            # Build de Header
             obj_header={
-                'book_name': obj_book['name'],
-                'book':obj_book['name'],
-                #'chapter':str(reading[0]['start_chapter'])
+                'book_name': obj_reading['title'],
+                'book':obj_reading['title'],
             }
 
         content={
             'obj_reading': obj_reading,
-            'obj_chapter': obj_chapter,
             'obj_header': obj_header,
             'obj_language':obj_language
         }
