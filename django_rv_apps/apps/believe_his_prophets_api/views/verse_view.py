@@ -136,9 +136,7 @@ class VerseViewSet(viewsets.ModelViewSet):
                     obj_reading[count]['data'])
                 count+=1
             # Get de Book
-            queryset = Book.objects.get(id=reading[0]['book_id'])
-            serializer_book= BookSerializer(queryset,many=False)
-            obj_book=serializer_book.data
+            book= Book.objects.filter(id=reading[0]['book_id']).values().first()
             # Get de Chapter
             queryset = Chapter.objects.filter(book_id=reading[0]['book_id'],
                             chapter=reading[0]['start_chapter'],
@@ -148,7 +146,7 @@ class VerseViewSet(viewsets.ModelViewSet):
                 obj_chapter=serializer_chapter.data
             # Build de Header
             obj_header={
-                'book_name': obj_book['translate_name'],
+                'book': book,
                 'chapter':str(reading[0]['start_chapter'])
             }
         if obj_chapter:
