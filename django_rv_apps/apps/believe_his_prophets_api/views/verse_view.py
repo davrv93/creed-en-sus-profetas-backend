@@ -147,6 +147,7 @@ class VerseViewSet(viewsets.ModelViewSet):
             # Build de Header
             obj_header={
                 'title':book['translate_name'],
+                'book_name':book['translate_name'],
                 'chapter':str(reading[0]['start_chapter'])
             }
         content={}
