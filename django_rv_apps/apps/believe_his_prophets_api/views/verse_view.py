@@ -146,7 +146,7 @@ class VerseViewSet(viewsets.ModelViewSet):
                 obj_chapter=serializer_chapter.data
             # Build de Header
             obj_header={
-                'title':book['translate_name']
+                'title':book['translate_name'],
                 'chapter':str(reading[0]['start_chapter'])
             }
         content={}
