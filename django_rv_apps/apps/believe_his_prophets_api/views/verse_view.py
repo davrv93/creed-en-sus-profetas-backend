@@ -146,9 +146,10 @@ class VerseViewSet(viewsets.ModelViewSet):
                 obj_chapter=serializer_chapter.data
             # Build de Header
             obj_header={
-                'book': book,
+                'title':book['translate_name']
                 'chapter':str(reading[0]['start_chapter'])
             }
+        content={}
         if obj_chapter:
             content={
                 'obj_reading': obj_reading,
@@ -164,6 +165,7 @@ class VerseViewSet(viewsets.ModelViewSet):
                 'obj_header': obj_header,
                 'obj_language':obj_language
             }
+        content['book']=book
         return Response(content)
 
 
