@@ -18,6 +18,9 @@ class Chapter(models.Model):
         blank=False, null=False)
     audio = models.FileField(
         blank=True, null=True)
+    commentary_html= models.TextField(
+        blank=True, null=True
+    )
     commentary = models.NullBooleanField(
         blank=True, null=True)
     commentary_file = models.FileField(
