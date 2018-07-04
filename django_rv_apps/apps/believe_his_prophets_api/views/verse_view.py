@@ -157,7 +157,8 @@ class VerseViewSet(viewsets.ModelViewSet):
                 'audio': obj_chapter[0]['audio'],
                 'obj_header': obj_header,
                 'obj_language':obj_language,
-                'commentary':obj_chapter[0]['commentary_url']
+                'commentary':obj_chapter[0]['commentary_url'],
+                'commentary_html':obj_chapter[0]['commentary_html'],
             }
         else:
             content={
