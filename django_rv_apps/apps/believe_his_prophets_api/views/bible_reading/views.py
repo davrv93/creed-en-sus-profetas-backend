@@ -27,7 +27,7 @@ class ReadingViewSet(viewsets.ReadOnlyModelViewSet):
     filter_fields = ('id','book','chapter','verse')
     search_fields = ('verse',)
 
-    @list_route(url_path='readfrom django_rv_apps.apps.believe_his_prophets.models.book import Booking')
+    @list_route(url_path='reading')
     def list_reading_verse(self, request):
         # Declarando variables e instanciando
         def remove_accents(data):
