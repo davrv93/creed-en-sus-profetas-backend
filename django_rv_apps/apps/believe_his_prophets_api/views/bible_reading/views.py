@@ -72,7 +72,7 @@ class ReadingViewSet(viewsets.ReadOnlyModelViewSet):
             # Get de Book
             queryset= Book.objects.filter(id=reading.book_id).first()
 
-            serializer= BookSerializer(queryset,many=True)
+            serializer= BookSerializer(queryset)
             book=serializer.data
             retorno['book']=book
 
