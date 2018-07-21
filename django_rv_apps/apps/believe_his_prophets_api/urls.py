@@ -8,12 +8,13 @@ from .views.spirit_prophecy_view import SpiritProphecyViewSet
 from .views.spirit_prophecy_chapter_view import SpiritProphecyChapterViewSet
 from .views.spirit_prophecy_read_view import SpiritProphecyReadViewSet
 from .views.application_view import ApplicationViewSet
-
+from .views.bible_reading.views import ReadingViewSet
 
 router = routers.DefaultRouter()
 router.register(r'testament', TestamentViewSet)
 router.register(r'book', BookViewSet)
 router.register(r'verse', VerseViewSet)
+router.register(r'bible_reading', ReadingViewSet)
 router.register(r'chapter', ChapterViewSet)
 router.register(r'spirit_prophecy', SpiritProphecyViewSet)
 router.register(r'spirit_prophecy_chapter', SpiritProphecyChapterViewSet)
