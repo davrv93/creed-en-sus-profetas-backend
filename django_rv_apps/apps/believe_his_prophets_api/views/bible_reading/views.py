@@ -62,10 +62,12 @@ class ReadingViewSet(viewsets.ReadOnlyModelViewSet):
                             language__code_iso=language)
 
             serializer = VerseSerializer(queryset, many=True)
-            reading=serializer.data
+            verse=serializer.data
 
-            for x in reading:
+            for x in verse:
                 x['data_clean']=remove_accents(x['data'])
+
+            retorno['verse']=verse
 
             # Get de Book
             queryset= Book.objects.filter(id=reading.book_id).first()
