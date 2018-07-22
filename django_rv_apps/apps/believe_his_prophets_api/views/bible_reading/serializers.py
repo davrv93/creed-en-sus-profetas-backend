@@ -29,7 +29,7 @@ class ChapterSerializer(serializers.ModelSerializer):
         model = Chapter
         fields='__all__'
 
-    def get_commentary_apend(self,obj):
+    def get_commentary_append(self,obj):
         if obj.commentary_html:
             return obj.commentary_html.url
         else:
