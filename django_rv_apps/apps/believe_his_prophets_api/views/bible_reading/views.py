@@ -81,9 +81,9 @@ class ReadingViewSet(viewsets.ReadOnlyModelViewSet):
             queryset = Chapter.objects.filter(
                                         book_id=reading.book_id,
                                         chapter=reading.start_chapter,
-                                        language__code_iso=language)
+                                        language__code_iso=language).first()
 
-            serializer= ChapterSerializer(queryset,many=True)
+            serializer= ChapterSerializer(queryset)
             chapter=serializer.data
             retorno['chapter']=chapter
 

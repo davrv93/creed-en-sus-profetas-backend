@@ -23,6 +23,14 @@ class BookSerializer(serializers.ModelSerializer):
 
 class ChapterSerializer(serializers.ModelSerializer):
 
+    commentary_append = serializers.SerializerMethodField()
+
     class Meta:
         model = Chapter
         fields='__all__'
+
+    def get_commentary_apend(self,obj):
+        if obj.commentary_html:
+            return obj.commentary_html.url
+        else:
+            return None
