@@ -31,6 +31,6 @@ class ChapterSerializer(serializers.ModelSerializer):
 
     def get_commentary_append(self,obj):
         if obj.commentary_file:
-            return obj.commentary_file.url
+            return 'https://davrv93.pythonanywhere.com/'+obj.commentary_file.url
         else:
             return None
