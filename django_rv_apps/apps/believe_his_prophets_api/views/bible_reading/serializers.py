@@ -31,6 +31,13 @@ class ChapterSerializer(serializers.ModelSerializer):
 
     def get_commentary_append(self,obj):
         if obj.commentary_file:
-            return 'https://davrv93.pythonanywhere.com'+obj.commentary_file.url
+            import urllib2
+            from BeautifulSoup import BeautifulSoup
+            url='https://davrv93.pythonanywhere.com'+obj.commentary_file.url
+            page = urllib2.urlopen(url)
+            soup = BeautifulSoup(page)
+
+            x = soup.body.find('div', attrs={'class' : 'container'}).text
+            return x
         else:
             return None
