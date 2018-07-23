@@ -31,7 +31,12 @@ class ChapterSerializer(serializers.ModelSerializer):
 
     def get_commentary_append(self,obj):
         if obj.commentary_file:
-            import urllib2
+            try:
+                # For Python 3.0 and later
+                from urllib.request import urlopen
+            except ImportError:
+                # Fall back to Python 2's urllib2
+                from urllib2 import urlopen
             from BeautifulSoup import BeautifulSoup
             url='https://davrv93.pythonanywhere.com'+obj.commentary_file.url
             page = urllib2.urlopen(url)
