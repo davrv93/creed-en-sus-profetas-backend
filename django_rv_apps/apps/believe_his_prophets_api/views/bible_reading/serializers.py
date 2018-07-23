@@ -42,8 +42,7 @@ class ChapterSerializer(serializers.ModelSerializer):
             url='https://davrv93.pythonanywhere.com'+obj.commentary_file.url
             page = urlopen(url)
             soup = BeautifulSoup(page)
-
-            x = soup.body.find('div', attrs={'class' : 'container'}).text
+            x = str(soup)
             return x
         else:
             return None
