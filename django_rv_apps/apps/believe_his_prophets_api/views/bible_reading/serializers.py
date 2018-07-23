@@ -37,7 +37,8 @@ class ChapterSerializer(serializers.ModelSerializer):
             except ImportError:
                 # Fall back to Python 2's urllib2
                 from urllib2 import urlopen
-            from BeautifulSoup import BeautifulSoup
+            from bs4 import BeautifulSoup
+            
             url='https://davrv93.pythonanywhere.com'+obj.commentary_file.url
             page = urllib2.urlopen(url)
             soup = BeautifulSoup(page)
