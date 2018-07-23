@@ -40,7 +40,7 @@ class ChapterSerializer(serializers.ModelSerializer):
             from bs4 import BeautifulSoup
             
             url='https://davrv93.pythonanywhere.com'+obj.commentary_file.url
-            page = urllib2.urlopen(url)
+            page = urlopen(url)
             soup = BeautifulSoup(page)
 
             x = soup.body.find('div', attrs={'class' : 'container'}).text
