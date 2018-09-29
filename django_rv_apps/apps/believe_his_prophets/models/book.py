@@ -18,7 +18,7 @@ class Book(models.Model):
         blank=False, null=False)
     translate_abrev = models.CharField(
         max_length=50,
-        blank=False, null=False)
+        blank=True, null=True)
     translate_name = models.CharField(
         max_length=50,
         blank=True, null=True)

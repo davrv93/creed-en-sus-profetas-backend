@@ -18,6 +18,7 @@ from django_rv_apps.apps.believe_his_prophets.models.emotion import Emotion, Lan
 from django_rv_apps.apps.believe_his_prophets.models.sentiment import Sentiment, LanguageSentiment
 from django_rv_apps.apps.believe_his_prophets.models.analysis_verse import AnalysisVerse, EmotionAnalysisVerse
 from django_rv_apps.apps.believe_his_prophets.models.analysis_chapter import AnalysisChapter, EmotionAnalysisChapter
+from django_rv_apps.apps.believe_his_prophets.models.book_language import BookLanguage
 
 class VerseAdmin(admin.ModelAdmin):
     list_display = ['book', 'chapter', 'verse']
@@ -70,6 +71,6 @@ admin.site.register(Emotion)
 admin.site.register(Sentiment)
 admin.site.register(AnalysisVerse, EmotionAnalysisVerseAdmin)
 admin.site.register(AnalysisChapter, EmotionAnalysisChapterAdmin)
-
+admin.site.register(BookLanguage)
 
 
