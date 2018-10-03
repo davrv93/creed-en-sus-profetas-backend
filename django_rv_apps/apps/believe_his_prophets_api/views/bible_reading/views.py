@@ -19,11 +19,14 @@ from django_rv_apps.apps.believe_his_prophets_api.views.bible_reading.serializer
                                                                                           VerseSerializer,
                                                                                           ChapterSerializer)
 
+from .filters import BibleReadFilter
+
 
 class ReadingViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Verse.objects.all().prefetch_related('book','language')
     serializer_class = VerseSerializer
     filter_backends = (filters.SearchFilter, django_filters.DjangoFilterBackend,)
+    filterset_class = BibleReadFilter
     filter_fields = ('id','book','chapter','verse')
     search_fields = ('verse',)
 
