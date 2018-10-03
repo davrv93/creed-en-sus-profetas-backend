@@ -17,14 +17,15 @@ from django_rv_apps.apps.believe_his_prophets.models.commentary_verse import \
 from django_rv_apps.apps.believe_his_prophets.models.verse import Verse
 from django_rv_apps.apps.believe_his_prophets_api.views.bible_reading.serializers import (BookSerializer,
                                                                                           VerseSerializer,
-                                                                                          ChapterSerializer)
+                                                                                          ChapterSerializer,
+                                                                                          BibleReadSerializer)
 
 from .filters import BibleReadFilter
 
 
 class ReadingViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = BibleRead.objects.all()
-    serializer_class = VerseSerializer
+    serializer_class = BibleReadSerializer
     filter_backends = (filters.SearchFilter, django_filters.DjangoFilterBackend,)
     filterset_class = BibleReadFilter
     filter_fields = ('id','book','chapter','verse')
