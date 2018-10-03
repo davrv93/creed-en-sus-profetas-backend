@@ -28,7 +28,6 @@ class ReadingViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = BibleReadSerializer
     filter_backends =  django_filters.DjangoFilterBackend
     filterset_class = BibleReadFilter
-    filter_fields = ('id','book','chapter','verse')
 
     @list_route(url_path='reading')
     def list_reading_verse(self, request):
