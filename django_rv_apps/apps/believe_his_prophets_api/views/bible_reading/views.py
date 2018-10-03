@@ -23,7 +23,7 @@ from .filters import BibleReadFilter
 
 
 class ReadingViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Verse.objects.all().prefetch_related('book','language')
+    queryset = BibleRead.objects.all()
     serializer_class = VerseSerializer
     filter_backends = (filters.SearchFilter, django_filters.DjangoFilterBackend,)
     filterset_class = BibleReadFilter
