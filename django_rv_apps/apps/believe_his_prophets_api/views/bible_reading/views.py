@@ -1,7 +1,10 @@
 import unicodedata
 from datetime import datetime
 
-from django_filters import rest_framework as django_filters
+# from django_filters import rest_framework as django_filters
+
+from django_filters.rest_framework import DjangoFilterBackend, FilterSet
+
 from rest_framework import filters, serializers, status, viewsets
 from rest_framework.decorators import list_route
 from rest_framework.exceptions import ParseError
@@ -26,7 +29,7 @@ from .filters import BibleReadFilter
 class ReadingViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = BibleRead.objects.all()
     serializer_class = BibleReadSerializer
-    filter_backends =  django_filters.DjangoFilterBackend
+    filter_backends =  DjangoFilterBackend
     filterset_class = BibleReadFilter
 
     @list_route(url_path='reading')
