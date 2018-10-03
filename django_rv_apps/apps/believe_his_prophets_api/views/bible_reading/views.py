@@ -26,10 +26,9 @@ from .filters import BibleReadFilter
 class ReadingViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = BibleRead.objects.all()
     serializer_class = BibleReadSerializer
-    filter_backends = (filters.SearchFilter, django_filters.DjangoFilterBackend,)
+    filter_backends =  django_filters.DjangoFilterBackend
     filterset_class = BibleReadFilter
     filter_fields = ('id','book','chapter','verse')
-    search_fields = ('verse',)
 
     @list_route(url_path='reading')
     def list_reading_verse(self, request):
