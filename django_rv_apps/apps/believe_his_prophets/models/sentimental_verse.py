@@ -10,8 +10,9 @@ class SentimentalVerse(models.Model):
          editable=False)
     verse = models.ForeignKey(
         Verse, db_column='verse_id',
-        blank=False, null=False)
-    
+        blank=False, null=False,
+        on_delete=models.PROTECT)
+
     name = models.CharField(
         max_length=30,
         blank=False, null=False)
@@ -24,7 +25,7 @@ class SentimentalVerse(models.Model):
     translate_name = models.CharField(
         max_length=50,
         blank=True, null=True)
- 
+
 
     class Meta:
         verbose_name = 'Sentimental verse'

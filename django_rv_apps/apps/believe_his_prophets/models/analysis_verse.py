@@ -13,13 +13,13 @@ class AnalysisVerse(models.Model):
     verse = models.ForeignKey(
         Verse,
         db_column='verse_id',
-        blank=False,
-        null=False)
+        blank=False, null=False,
+        on_delete=models.PROTECT)
     sentiment= models.ForeignKey(
         Sentiment,
         db_column='sentiment_id',
-        blank=True,
-        null=True
+        blank=True, null=True,
+        on_delete=models.PROTECT
     )
     value = models.DecimalField(
         null=True, blank=True,

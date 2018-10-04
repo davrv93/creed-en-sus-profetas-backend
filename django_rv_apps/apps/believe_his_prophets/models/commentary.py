@@ -11,7 +11,8 @@ class Commentary(models.Model):
     book = models.ForeignKey(
         Book, db_column='verse_id',
         related_name='book_commentary_set',
-        blank=False, null=False)
+        blank=False, null=False,
+        on_delete=models.PROTECT)
     chapter= models.IntegerField(
         blank=True, null=True
         )
@@ -21,7 +22,8 @@ class Commentary(models.Model):
     language = models.ForeignKey(
         Language, db_column='language_id',
         related_name='language_commentary_set',
-        blank=True, null=True
+        blank=True, null=True,
+        on_delete=models.PROTECT
         )
 
     class Meta:

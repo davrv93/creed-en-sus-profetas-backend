@@ -10,10 +10,12 @@ class Chapter(models.Model):
          editable=False)
     book = models.ForeignKey(
         Book, db_column='book_id',
-        blank=False, null=False)
+        blank=False, null=False,
+        on_delete=models.PROTECT)
     language = models.ForeignKey(
         Language, db_column='language_id',
-        blank=False, null=False)
+        blank=False, null=False,
+        on_delete=models.PROTECT)
     chapter = models.IntegerField(
         blank=False, null=False)
     audio = models.FileField(

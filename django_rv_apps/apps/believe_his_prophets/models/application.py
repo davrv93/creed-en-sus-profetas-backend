@@ -20,7 +20,8 @@ class Application(models.Model):
     language = models.ForeignKey(
         Language,
         blank=False, null=False,
-        db_column='language_id')
+        db_column='language_id',
+        on_delete=models.PROTECT)
     is_active= models.CharField(
         max_length=1,
         blank=False, null=False,

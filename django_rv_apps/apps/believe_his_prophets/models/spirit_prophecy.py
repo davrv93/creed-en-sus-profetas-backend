@@ -21,7 +21,8 @@ class SpiritProphecy(models.Model):
         blank=True, null=True)
     language = models.ForeignKey(
         Language, db_column='language_id',
-        blank=True, null=True)
+        blank=True, null=True,
+        on_delete=models.PROTECT)
 
     class Meta:
         verbose_name = 'SpiritProphecy'

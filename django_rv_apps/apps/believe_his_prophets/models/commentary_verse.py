@@ -11,7 +11,8 @@ class CommentaryVerse(models.Model):
     verse = models.ForeignKey(
         Verse, db_column='verse_id',
         related_name='commentary_verse_verse_set',
-        blank=False, null=False)
+        blank=False, null=False,
+        on_delete=models.PROTECT)
     order = models.IntegerField(
         blank=False, null=False)
     word = models.CharField(

@@ -11,7 +11,8 @@ class SpiritProphecyChapter(models.Model):
     spirit_prophecy = models.ForeignKey(
         SpiritProphecy,
         db_column='spirit_prophecy_id',
-        blank=False, null=False)
+        blank=False, null=False,
+        on_delete=models.PROTECT)
     name = models.CharField(
         max_length=150,
         blank=False, null=False)
@@ -23,7 +24,8 @@ class SpiritProphecyChapter(models.Model):
         blank=True, null=True)
     language = models.ForeignKey(
         Language, db_column='language_id',
-        blank=True, null=True)
+        blank=True, null=True,
+        on_delete=models.PROTECT)
     chapter = models.IntegerField(
         blank=True, null=True)
 

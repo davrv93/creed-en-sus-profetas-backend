@@ -13,8 +13,8 @@ class AnalysisChapter(models.Model):
     book = models.ForeignKey(
         Book,
         db_column='book_id',
-        blank=False,
-        null=False)
+        blank=False, null=False,
+        on_delete=models.PROTECT)
     chapter= models.IntegerField(
         blank=False,
         null=False
@@ -22,8 +22,8 @@ class AnalysisChapter(models.Model):
     sentiment= models.ForeignKey(
         Sentiment,
         db_column='sentiment_id',
-        blank=True,
-        null=True
+        blank=True, null=True,
+        on_delete=models.PROTECT
     )
     value = models.DecimalField(
         null=True, blank=True,

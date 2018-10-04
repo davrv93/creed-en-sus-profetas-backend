@@ -12,18 +12,21 @@ class SpiritProphecyRead(models.Model):
     spirit_prophecy = models.ForeignKey(
         SpiritProphecy,
         db_column='spirit_prophecy_id',
-        blank=False, null=False)
+        blank=False, null=False,
+        on_delete=models.PROTECT)
     spirit_prophecy_chapter = models.ForeignKey(
         SpiritProphecyChapter,
         db_column='spirit_prophecy_chapter_id',
-        blank=True, null=True)
+        blank=True, null=True,
+        on_delete=models.PROTECT)
     data = models.TextField(
         blank=False, null=False)
     date_read = models.DateField(
         blank=True, null=True)
     language = models.ForeignKey(
         Language, db_column='language_id',
-        blank=True, null=True)
+        blank=True, null=True,
+        on_delete=models.PROTECT)
     title= models.CharField(
         blank=True, null=True,
         max_length=120
