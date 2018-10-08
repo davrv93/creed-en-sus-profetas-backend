@@ -25,7 +25,7 @@ SECRET_KEY = 'llw6!e9*(#c*kt2h@v#e&fg#t5ai4a^rryhmr@rtk$x7k)*&t*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['davrv93.pythonanywhere.com','localhost']
+ALLOWED_HOSTS = ['davrv93.pythonanywhere.com', 'localhost']
 
 
 # Application definition
@@ -45,18 +45,16 @@ INSTALLED_APPS = [
     'django_rv_apps.apps.believe_his_prophets'
 ]
 
-MIDDLEWARE_CLASSES = [
-    'corsheaders.middleware.CorsMiddleware',
-    #'corsheaders.middleware.CorsPostCsrfMiddleware',
+MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
 ]
 
 ROOT_URLCONF = 'django_rv_apps.urls'
@@ -77,18 +75,6 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django_rv_apps.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
-# DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-# }
 
 DATABASES = {
     'default': {
@@ -96,7 +82,8 @@ DATABASES = {
         'NAME': 'davrv93$django_rv_apps',
         'USER': 'davrv93',
         'PASSWORD': 'damonalbarn1',
-        'HOST': 'davrv93.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
+        # Or an IP Address that your DB is hosted on
+        'HOST': 'davrv93.mysql.pythonanywhere-services.com',
         'PORT': '3306',
     }
 }
@@ -145,31 +132,20 @@ STATICFILES_DIRS = (
 )
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL='/media/'
+MEDIA_URL = '/media/'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # or, eg,
 
 CORS_ORIGIN_ALLOW_CREDENTIALS = False
 
-CORS_ORIGIN_ALLOW_ALL = True  # False
-# CORS_ALLOW_CREDENTIALS = False
-# CORS_ORIGIN_WHITELIST = ()
-# CORS_ALLOW_METHODS = (
-#     'DELETE',
-#     'GET',
-#     'OPTIONS',
-#     'PATCH',
-#     'POST',
-#     'HEAD',
-#     'PUT',
-# )
-CORS_ORIGIN_WHITELIST = ('localhost','127.0.0.1')
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = ('localhost', '127.0.0.1')
 
 
 #CORS_URLS_REGEX = r'^/api/.*$'
@@ -199,13 +175,13 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
-   'DEFAULT_PERMISSION_CLASSES': (
+    'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
     ),
-    
+
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend'
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 100   
+    'PAGE_SIZE': 100
 }
