@@ -9,25 +9,27 @@ from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy_chapter imp
 from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy_read import SpiritProphecyRead
 from django_rv_apps.apps.believe_his_prophets_api.views.spirit_prophecy_view import SpiritProphecySerializer
 from django_rv_apps.apps.believe_his_prophets_api.views.spirit_prophecy_chapter_view import SpiritProphecyChapterSerializer
-from django_rv_apps.apps.believe_his_prophets_api.views.language_view import LanguageSerializer
-
+# from django_rv_apps.apps.believe_his_prophets_api.views.language_view import LanguageSerializer
 
 
 from django_filters import rest_framework as django_filters
 from rest_framework import filters
 from datetime import datetime
 
+
 class SpiritProphecyReadSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SpiritProphecyRead
-        fields='__all__'
+        fields = '__all__'
+
 
 class SpiritProphecyReadViewSet(viewsets.ModelViewSet):
     queryset = SpiritProphecyRead.objects.all()
     serializer_class = SpiritProphecyReadSerializer
-    filter_backends = (filters.SearchFilter, django_filters.DjangoFilterBackend,)
-    filter_fields = ('id','date_read')
+    filter_backends = (filters.SearchFilter,
+                       django_filters.DjangoFilterBackend,)
+    filter_fields = ('id', 'date_read')
     search_fields = ('date_read')
 
     def update(self, request, pk=None):
@@ -45,7 +47,7 @@ class SpiritProphecyReadViewSet(viewsets.ModelViewSet):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     def perform_destroy(self, instance):
-       return instance.delete()
+        return instance.delete()
 
     @list_route(url_path='destroy', methods=['post'])
     def destroy_multiple(self, request):
@@ -62,63 +64,62 @@ class SpiritProphecyReadViewSet(viewsets.ModelViewSet):
 
     @list_route(url_path='status')
     def get_status(self, request):
-        obj_reading={}
-        obj_book={}
-        language=''
+        obj_reading = {}
+        obj_book = {}
+        language = ''
         # Obteniendo fecha por defecto
-        param_date=request.query_params.get('date','')
-        param_language=request.query_params.get('language','')
+        param_date = request.query_params.get('date', '')
+        param_language = request.query_params.get('language', '')
         if param_date:
-            datenow=param_date
+            datenow = param_date
             print('param_date', datenow)
         else:
             i = datetime.now()
-            datenow=i.strftime('%Y-%m-%d')
-        
-        if param_language=='':
-            param_language='ES'
+            datenow = i.strftime('%Y-%m-%d')
 
-        reading=SpiritProphecyRead.objects.filter(language__code_iso=param_language,
-                                          date_read=datenow
-                                         ).count()
-        return Response({'count':reading})
-                    
+        if param_language == '':
+            param_language = 'ES'
 
+        reading = SpiritProphecyRead.objects.filter(language__code_iso=param_language,
+                                                    date_read=datenow
+                                                    ).count()
+        return Response({'count': reading})
 
     @list_route(url_path='reading')
     def list_reading_verse(self, request):
         # Declarando variables e instanciando
-        obj_reading={}
-        obj_book={}
-        language=''
+        obj_reading = {}
+        obj_book = {}
+        language = ''
         # Obteniendo fecha por defecto
-        param_date=request.query_params.get('date','')
+        param_date = request.query_params.get('date', '')
         if param_date:
-            datenow=param_date
+            datenow = param_date
             print('param_date', datenow)
         else:
             i = datetime.now()
-            datenow=i.strftime('%Y-%m-%d')
+            datenow = i.strftime('%Y-%m-%d')
         # Obteniendo idioma
-        param_language=request.query_params.get('language','')
-        if param_language=='':
-            param_language='ES'
-        obj_language = Language.objects.filter(code_iso=str(param_language)).values().first()
-        obj_header={}
-        obj_reading=SpiritProphecyRead.objects.filter(language__code_iso=param_language,
-                                          date_read=datenow
-                                         ).values().first()
-        print('obj_reading',obj_reading)
+        param_language = request.query_params.get('language', '')
+        if param_language == '':
+            param_language = 'ES'
+        obj_language = Language.objects.filter(
+            code_iso=str(param_language)).values().first()
+        obj_header = {}
+        obj_reading = SpiritProphecyRead.objects.filter(language__code_iso=param_language,
+                                                        date_read=datenow
+                                                        ).values().first()
+        print('obj_reading', obj_reading)
 
         if obj_reading:
-            obj_header={
+            obj_header = {
                 'book_name': obj_reading['title'],
-                'book':obj_reading['title'],
+                'book': obj_reading['title'],
             }
 
-        content={
+        content = {
             'obj_reading': obj_reading,
             'obj_header': obj_header,
-            'obj_language':obj_language
+            'obj_language': obj_language
         }
         return Response(content)
