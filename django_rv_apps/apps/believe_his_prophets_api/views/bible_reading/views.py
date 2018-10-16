@@ -11,5 +11,5 @@ class ReadingViewSet(viewsets.ModelViewSet, ReadingMixin):
 
     queryset = BibleRead.objects.all()
     serializer_class = BibleReadSerializer
-    filter_backends = ( django_filters.DjangoFilterBackend,)
+    filter_backends = (django_filters.DjangoFilterBackend,)
     filterset_class = BibleReadFilter
