@@ -19,22 +19,39 @@ from django_rv_apps.apps.believe_his_prophets.models.sentiment import Sentiment,
 from django_rv_apps.apps.believe_his_prophets.models.analysis_verse import AnalysisVerse, EmotionAnalysisVerse
 from django_rv_apps.apps.believe_his_prophets.models.analysis_chapter import AnalysisChapter, EmotionAnalysisChapter
 from django_rv_apps.apps.believe_his_prophets.models.book_language import BookLanguage
+from import_export.admin import ImportExportModelAdmin
+
+
+from import_export import resources
+
+
+class BibleReadResource(resources.ModelResource):
+
+    class Meta:
+        model = BibleRead
+
+
+class BibleReadAdmin(ImportExportModelAdmin):
+    resource_class = BibleReadResource
+
 
 class VerseAdmin(admin.ModelAdmin):
     list_display = ['book', 'chapter', 'verse']
-    list_filter = ('verse','chapter','book__name','language__name',)
-    search_fields = ['book__name', 'book__book_order','chapter','verse',]
+    list_filter = ('verse', 'chapter', 'book__name', 'language__name',)
+    search_fields = ['book__name', 'book__book_order', 'chapter', 'verse', ]
 
 
 class AnalysisVerseAdmin(admin.ModelAdmin):
     list_display = ['verse']
-    list_filter = ('verse','verse__language__name',)
-    search_fields = ['verse',]
+    list_filter = ('verse', 'verse__language__name',)
+    search_fields = ['verse', ]
 
 
 class CommentaryVerseAdmin(admin.ModelAdmin):
-    search_fields = ['verse__book__book_order','verse__chapter','verse__verse',]
+    search_fields = ['verse__book__book_order',
+                     'verse__chapter', 'verse__verse', ]
     raw_id_fields = ('verse',)
+
 
 class EmotionAnalysisVerseInLine(admin.TabularInline):
     model = EmotionAnalysisVerse
@@ -43,6 +60,7 @@ class EmotionAnalysisVerseInLine(admin.TabularInline):
 
 class EmotionAnalysisVerseAdmin(admin.ModelAdmin):
     inlines = (EmotionAnalysisVerseInLine,)
+
 
 class EmotionAnalysisChapterInLine(admin.TabularInline):
     model = EmotionAnalysisChapter
@@ -61,7 +79,7 @@ admin.site.register(Book)
 admin.site.register(Commentary)
 admin.site.register(Version)
 admin.site.register(Verse, VerseAdmin)
-admin.site.register(BibleRead)
+admin.site.register(BibleRead, BibleReadAdmin)
 admin.site.register(SpiritProphecy)
 admin.site.register(SpiritProphecyChapter)
 admin.site.register(SpiritProphecyRead)
@@ -72,5 +90,3 @@ admin.site.register(Sentiment)
 admin.site.register(AnalysisVerse, EmotionAnalysisVerseAdmin)
 admin.site.register(AnalysisChapter, EmotionAnalysisChapterAdmin)
 admin.site.register(BookLanguage)
-
-

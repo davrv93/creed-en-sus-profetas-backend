@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     'corsheaders',  # deactive for manage.py dumpdata > ...
-    'django_rv_apps.apps.believe_his_prophets'
+    'django_rv_apps.apps.believe_his_prophets',
+    'import_export'
 ]
 
 MIDDLEWARE = [
@@ -187,3 +188,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 100
 }
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
