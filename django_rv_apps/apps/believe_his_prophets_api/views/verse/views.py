@@ -12,3 +12,9 @@ class VerseViewSet(viewsets.ModelViewSet):
     serializer_class = VerseSerializer
     filter_backends = (django_filters.DjangoFilterBackend,)
     filterset_class = VerseFilter
+
+    def paginate_queryset(self, queryset):
+        if 'no_page' in self.request.query_params:
+            return None
+
+        return super().paginate_queryset(queryset)
