@@ -25,7 +25,7 @@ SECRET_KEY = 'llw6!e9*(#c*kt2h@v#e&fg#t5ai4a^rryhmr@rtk$x7k)*&t*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['davrv93.pythonanywhere.com', 'localhost']
+# ALLOWED_HOSTS = ['davrv93.pythonanywhere.com', 'localhost']
 
 
 # Application definition
@@ -43,16 +43,22 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'corsheaders',  # deactive for manage.py dumpdata > ...
     'django_rv_apps.apps.believe_his_prophets',
-    'import_export'
+    'import_export',
+    'debug_toolbar',
+
 ]
 
 MIDDLEWARE = [
-
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+
+
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -143,38 +149,40 @@ STATICFILES_FINDERS = (
 
 # or, eg,
 
-CORS_ORIGIN_ALLOW_CREDENTIALS = False
+# CORS_ORIGIN_ALLOW_CREDENTIALS = False
 
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = ('localhost', '127.0.0.1')
+# CORS_ORIGIN_WHITELIST = ('localhost', '127.0.0.1')
 
 
 #CORS_URLS_REGEX = r'^/api/.*$'
-CORS_URLS_REGEX = r'^/.*$'
+# CORS_URLS_REGEX = r'^/.*$'
 #CORS_URLS_REGEX = r'^/api/believe/verse*$'
 #CORS_URLS_ALLOW_ALL_REGEX = r'^.*$'
 
 
-CORS_ALLOW_HEADERS = (
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-    'access-control-allow-credentials',
-    'access-control-allow-headers',
-    'access-control-allow-methods',
-    'access-control-allow-origin',
-)
+# CORS_ALLOW_HEADERS = (
+#     'accept',
+#     'accept-encoding',
+#     'authorization',
+#     'content-type',
+#     'dnt',
+#     'origin',
+#     'user-agent',
+#     'x-csrftoken',
+#     'x-requested-with',
+#     'access-control-allow-credentials',
+#     'access-control-allow-headers',
+#     'access-control-allow-methods',
+#     'access-control-allow-origin',
+# )
 
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
@@ -190,3 +198,5 @@ REST_FRAMEWORK = {
 }
 
 IMPORT_EXPORT_USE_TRANSACTIONS = True
+
+INTERNAL_IPS = '127.0.0.1'

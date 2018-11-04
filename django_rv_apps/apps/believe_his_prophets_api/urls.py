@@ -18,6 +18,9 @@ from .views.spirit_prophecy_chapter_view import SpiritProphecyChapterViewSet
 from .views.spirit_prophecy_read_view import SpiritProphecyReadViewSet
 from .views.application_view import ApplicationViewSet
 from .views.bible_reading.views import ReadingViewSet
+from .views.hierarchy.views import HierarchyViewSet
+
+from .views.sucursal.views import SucursalCreateView, SucursalDetailView
 
 router = routers.DefaultRouter()
 
@@ -33,7 +36,13 @@ router.register(r'spirit_prophecy_chapter', SpiritProphecyChapterViewSet)
 router.register(r'spirit_prophecy_read', SpiritProphecyReadViewSet)
 router.register(r'application', ApplicationViewSet)
 
+router.register(r'hierarchys', HierarchyViewSet)
+
 
 urlpatterns = [
     url(r'^', include(router.urls)),
+    url(r'^sucursales/$', SucursalCreateView.as_view(), name='sucursales'),
+    url(r'^sucursales/(?P<pk>[^/.]+)/$',
+        SucursalDetailView.as_view(), name='detail'),
+
 ]

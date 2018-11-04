@@ -19,11 +19,18 @@ from rest_framework_swagger.views import get_swagger_view
 
 schema_view = get_swagger_view(title='Pastebin API')
 
+import debug_toolbar
+
 
 urlpatterns = [
     url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
     url(r'^admin/', admin.site.urls),
+    url(r'^api-auth/', include('rest_framework.urls')),
+
     url(r'^schema/', schema_view),
     url(r'^api/believe/', include('django_rv_apps.apps.believe_his_prophets_api.urls')),
+    url(r'^__debug__/', include(debug_toolbar.urls)),
+
+
 
 ]
