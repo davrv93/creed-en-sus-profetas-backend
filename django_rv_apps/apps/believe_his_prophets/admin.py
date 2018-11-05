@@ -19,8 +19,8 @@ from django_rv_apps.apps.believe_his_prophets.models.sentiment import Sentiment,
 from django_rv_apps.apps.believe_his_prophets.models.analysis_verse import AnalysisVerse, EmotionAnalysisVerse
 from django_rv_apps.apps.believe_his_prophets.models.analysis_chapter import AnalysisChapter, EmotionAnalysisChapter
 from django_rv_apps.apps.believe_his_prophets.models.book_language import BookLanguage
+from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy import SpiritProphecyLanguage
 from import_export.admin import ImportExportModelAdmin
-
 
 
 from import_export import resources
@@ -72,6 +72,15 @@ class EmotionAnalysisChapterAdmin(admin.ModelAdmin):
     inlines = (EmotionAnalysisChapterInLine,)
 
 
+class SpiritProphecyLanguageInLine(admin.TabularInline):
+    model = SpiritProphecyLanguage
+    extra = 1
+
+
+class SpiritProphecyLanguageAdmin(admin.ModelAdmin):
+    inlines = (SpiritProphecyLanguageInLine,)
+
+
 admin.site.register(CommentaryVerse, CommentaryVerseAdmin)
 # Register your models here.
 admin.site.register(Testament)
@@ -81,7 +90,7 @@ admin.site.register(Commentary)
 admin.site.register(Version)
 admin.site.register(Verse, VerseAdmin)
 admin.site.register(BibleRead, BibleReadAdmin)
-admin.site.register(SpiritProphecy)
+admin.site.register(SpiritProphecy, SpiritProphecyLanguageAdmin)
 admin.site.register(SpiritProphecyChapter)
 admin.site.register(SpiritProphecyRead)
 admin.site.register(Chapter)

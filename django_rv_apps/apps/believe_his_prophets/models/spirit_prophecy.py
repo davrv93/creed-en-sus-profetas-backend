@@ -12,7 +12,8 @@ class SpiritProphecy(models.Model):
         max_length=150,
         blank=False, null=False)
     language = models.ManyToManyField(
-        'SpiritProphecyLanguage', blank=True,
+        Language,
+        through='SpiritProphecyLanguage', blank=True,
         related_name='spirit_prophecy_language_set'
 
     )
