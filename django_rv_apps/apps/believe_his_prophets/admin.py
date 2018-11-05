@@ -22,10 +22,6 @@ from django_rv_apps.apps.believe_his_prophets.models.book_language import BookLa
 from import_export.admin import ImportExportModelAdmin
 
 
-from django_rv_apps.apps.believe_his_prophets.models.hierarchy import Hierarchy
-from django_rv_apps.apps.believe_his_prophets.models.hierarchy_type import HierarchyType
-from django_rv_apps.apps.believe_his_prophets.models.sucursal import Sucursal
-
 
 from import_export import resources
 
@@ -95,7 +91,3 @@ admin.site.register(Sentiment)
 admin.site.register(AnalysisVerse, EmotionAnalysisVerseAdmin)
 admin.site.register(AnalysisChapter, EmotionAnalysisChapterAdmin)
 admin.site.register(BookLanguage)
-
-admin.site.register(Hierarchy)
-admin.site.register(HierarchyType)
-admin.site.register(Sucursal)

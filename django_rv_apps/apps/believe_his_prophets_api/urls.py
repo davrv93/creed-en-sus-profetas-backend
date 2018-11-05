@@ -3,8 +3,6 @@ from rest_framework import routers
 
 from .views.book.views import BookViewSet
 
-from .views.book_language.views import BookLanguageViewSet
-
 from .views.chapter.views import ChapterViewSet
 
 from .views.language.views import LanguageViewSet
@@ -18,14 +16,10 @@ from .views.spirit_prophecy_chapter_view import SpiritProphecyChapterViewSet
 from .views.spirit_prophecy_read_view import SpiritProphecyReadViewSet
 from .views.application_view import ApplicationViewSet
 from .views.bible_reading.views import ReadingViewSet
-from .views.hierarchy.views import HierarchyViewSet
-
-from .views.sucursal.views import SucursalCreateView, SucursalDetailView
 
 router = routers.DefaultRouter()
 
 router.register(r'bible_reading', ReadingViewSet)
-router.register(r'book_languages', BookLanguageViewSet)
 router.register(r'books', BookViewSet)
 router.register(r'chapters', ChapterViewSet)
 router.register(r'languages', LanguageViewSet)
@@ -36,13 +30,9 @@ router.register(r'spirit_prophecy_chapter', SpiritProphecyChapterViewSet)
 router.register(r'spirit_prophecy_read', SpiritProphecyReadViewSet)
 router.register(r'application', ApplicationViewSet)
 
-router.register(r'hierarchys', HierarchyViewSet)
-
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^sucursales/$', SucursalCreateView.as_view(), name='sucursales'),
-    url(r'^sucursales/(?P<pk>[^/.]+)/$',
-        SucursalDetailView.as_view(), name='detail'),
+   
 
 ]

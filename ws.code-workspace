@@ -3,7 +3,7 @@
 		"path": "."
 	}],
 	"settings": {
-		"python.pythonPath": ".env/bin/python3.6",
+		"python.pythonPath": "${workspaceFolder}/.env/bin/python3.6",
 		"python.linting.pylintArgs": ["--load-plugins", "pylint_django"]
 
 	}
