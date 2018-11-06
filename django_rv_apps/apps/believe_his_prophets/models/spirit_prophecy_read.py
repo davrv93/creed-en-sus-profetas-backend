@@ -28,21 +28,6 @@ class SpiritProphecyRead(models.Model):
         verbose_name = 'SpiritProphecyRead'
         db_table = 'believe_spirit_prophecy_read'
         verbose_name_plural = 'SpiritProphecyRead'
-        default_permissions = ()
-        permissions = (
-            ('add_spiritprophecy',
-             'Puede agregar SpiritProphecyRead'),
-            ('change_spiritprophecy',
-             'Puede actualizar SpiritProphecyRead'),
-            ('delete_spiritprophecy',
-             'Puede eliminar SpiritProphecyRead'),
-            ('list_spiritprophecy',
-             'Puede listar SpiritProphecyRead'),
-            ('get_spiritprophecy',
-             'Puede obtener SpiritProphecyRead'),
-            ('listform_spiritprophecy',
-             'Puede listar SpiritProphecyRead en Formularios'),
-        )
 
     def __str__(self):
         return (self.spirit_prophecy_chapter.__str__() + '-'+str(self.date))

@@ -152,30 +152,6 @@ STATICFILES_FINDERS = (
 # CORS_ORIGIN_ALLOW_CREDENTIALS = False
 
 CORS_ORIGIN_ALLOW_ALL = True
-# CORS_ORIGIN_WHITELIST = ('localhost', '127.0.0.1')
-
-
-#CORS_URLS_REGEX = r'^/api/.*$'
-# CORS_URLS_REGEX = r'^/.*$'
-#CORS_URLS_REGEX = r'^/api/believe/verse*$'
-#CORS_URLS_ALLOW_ALL_REGEX = r'^.*$'
-
-
-# CORS_ALLOW_HEADERS = (
-#     'accept',
-#     'accept-encoding',
-#     'authorization',
-#     'content-type',
-#     'dnt',
-#     'origin',
-#     'user-agent',
-#     'x-csrftoken',
-#     'x-requested-with',
-#     'access-control-allow-credentials',
-#     'access-control-allow-headers',
-#     'access-control-allow-methods',
-#     'access-control-allow-origin',
-# )
 
 
 REST_FRAMEWORK = {
