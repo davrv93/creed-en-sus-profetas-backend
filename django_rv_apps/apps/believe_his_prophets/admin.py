@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from django_rv_apps.apps.believe_his_prophets.models.testament import Testament
 from django_rv_apps.apps.believe_his_prophets.models.language import Language
-from django_rv_apps.apps.believe_his_prophets.models.book import Book
+from django_rv_apps.apps.believe_his_prophets.models.book import Book, BookLanguage
 from django_rv_apps.apps.believe_his_prophets.models.version import Version
 from django_rv_apps.apps.believe_his_prophets.models.verse import Verse
 from django_rv_apps.apps.believe_his_prophets.models.bible_read import BibleRead
@@ -18,7 +18,6 @@ from django_rv_apps.apps.believe_his_prophets.models.emotion import Emotion, Lan
 from django_rv_apps.apps.believe_his_prophets.models.sentiment import Sentiment, LanguageSentiment
 from django_rv_apps.apps.believe_his_prophets.models.analysis_verse import AnalysisVerse, EmotionAnalysisVerse
 from django_rv_apps.apps.believe_his_prophets.models.analysis_chapter import AnalysisChapter, EmotionAnalysisChapter
-from django_rv_apps.apps.believe_his_prophets.models.book_language import BookLanguage
 from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy import SpiritProphecyLanguage
 from import_export.admin import ImportExportModelAdmin
 
@@ -36,10 +35,26 @@ class BibleReadAdmin(ImportExportModelAdmin):
     resource_class = BibleReadResource
 
 
+class BookLanguageInLine(admin.TabularInline):
+    model = BookLanguage
+    extra = 1
+
+
+class BookLanguageResource(resources.ModelResource):
+
+    class Meta:
+        model = BookLanguage
+
+
+class BookLanguageAdmin(ImportExportModelAdmin):
+    resource_class = BookLanguageResource
+    inlines = (BookLanguageInLine,)
+
+
 class VerseAdmin(admin.ModelAdmin):
     list_display = ['book', 'chapter', 'verse']
-    list_filter = ('verse', 'chapter', 'book__name', 'language__name',)
-    search_fields = ['book__name', 'book__book_order', 'chapter', 'verse', ]
+    list_filter = ('verse', 'chapter', 'book__book_order', 'language__name',)
+    search_fields = ['book__book_order', 'chapter', 'verse', ]
 
 
 class AnalysisVerseAdmin(admin.ModelAdmin):
@@ -85,7 +100,9 @@ admin.site.register(CommentaryVerse, CommentaryVerseAdmin)
 # Register your models here.
 admin.site.register(Testament)
 admin.site.register(Language)
-admin.site.register(Book)
+admin.site.register(Book, BookLanguageAdmin)
+# admin.site.register(BookLanguage, BookLanguageAdmin)
+
 admin.site.register(Commentary)
 admin.site.register(Version)
 admin.site.register(Verse, VerseAdmin)
@@ -99,4 +116,3 @@ admin.site.register(Emotion)
 admin.site.register(Sentiment)
 admin.site.register(AnalysisVerse, EmotionAnalysisVerseAdmin)
 admin.site.register(AnalysisChapter, EmotionAnalysisChapterAdmin)
-admin.site.register(BookLanguage)

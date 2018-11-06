@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from rest_framework import routers
-
+from django_rv_apps.apps.believe_his_prophets_api.views.book_language.views import BookLanguageViewSet
 from .views.book.views import BookViewSet
 
 from .views.chapter.views import ChapterViewSet
@@ -21,6 +21,7 @@ router = routers.DefaultRouter()
 
 router.register(r'bible_reading', ReadingViewSet)
 router.register(r'books', BookViewSet)
+router.register(r'book_languages', BookLanguageViewSet)
 router.register(r'chapters', ChapterViewSet)
 router.register(r'languages', LanguageViewSet)
 router.register(r'testaments', TestamentViewSet)
@@ -33,6 +34,6 @@ router.register(r'application', ApplicationViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-   
+
 
 ]

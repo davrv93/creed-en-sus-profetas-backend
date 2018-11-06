@@ -1,7 +1,7 @@
 from django_filters import rest_framework as django_filters
 from rest_framework import viewsets
 
-from django_rv_apps.apps.believe_his_prophets.models.book_language import BookLanguage
+from django_rv_apps.apps.believe_his_prophets.models.book import BookLanguage
 from .serializers import BookLanguageSerializer
 from .filters import BookLanguageFilter
 

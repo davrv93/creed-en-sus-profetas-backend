@@ -52,4 +52,4 @@ class SpiritProphecyChapterLanguage(models.Model):
     class Meta:
         verbose_name = 'SpiritProphecyChapterLanguage'
         verbose_name_plural = 'SpiritProphecyChapterLanguage'
-        db_table = 'believe_spirit_pr_lang_chapter'
+        db_table = 'believe_spirit_pr_chapter_lang'
