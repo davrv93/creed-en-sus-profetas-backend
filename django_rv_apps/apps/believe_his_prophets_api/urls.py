@@ -16,6 +16,7 @@ from .views.spirit_prophecy_chapter_view import SpiritProphecyChapterViewSet
 from .views.spirit_prophecy_read_view import SpiritProphecyReadViewSet
 from .views.application_view import ApplicationViewSet
 from .views.bible_reading.views import ReadingViewSet
+from .views.spirit_prophecy_chapter_language.views import SpiritProphecyChapterLanguageViewSet
 
 router = routers.DefaultRouter()
 
@@ -29,6 +30,9 @@ router.register(r'verses', VerseViewSet)
 router.register(r'spirit_prophecy', SpiritProphecyViewSet)
 router.register(r'spirit_prophecy_chapter', SpiritProphecyChapterViewSet)
 router.register(r'spirit_prophecy_read', SpiritProphecyReadViewSet)
+router.register(r'spirit_prophecy_chapter_language',
+                SpiritProphecyChapterLanguageViewSet)
+
 router.register(r'application', ApplicationViewSet)
 
 

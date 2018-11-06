@@ -8,7 +8,7 @@ from django_rv_apps.apps.believe_his_prophets.models.version import Version
 from django_rv_apps.apps.believe_his_prophets.models.verse import Verse
 from django_rv_apps.apps.believe_his_prophets.models.bible_read import BibleRead
 from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy import SpiritProphecy
-from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy_chapter import SpiritProphecyChapter
+from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy_chapter import SpiritProphecyChapter, SpiritProphecyChapterLanguage
 from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy_read import SpiritProphecyRead
 from django_rv_apps.apps.believe_his_prophets.models.chapter import Chapter
 from django_rv_apps.apps.believe_his_prophets.models.application import Application
@@ -87,6 +87,15 @@ class EmotionAnalysisChapterAdmin(admin.ModelAdmin):
     inlines = (EmotionAnalysisChapterInLine,)
 
 
+class SpiritProphecyChapterLanguageInLine(admin.TabularInline):
+    model = SpiritProphecyChapterLanguage
+    extra = 1
+
+
+class SpiritProphecyChapterLanguageAdmin(admin.ModelAdmin):
+    inlines = (SpiritProphecyChapterLanguageInLine,)
+
+
 class SpiritProphecyLanguageInLine(admin.TabularInline):
     model = SpiritProphecyLanguage
     extra = 1
@@ -101,14 +110,13 @@ admin.site.register(CommentaryVerse, CommentaryVerseAdmin)
 admin.site.register(Testament)
 admin.site.register(Language)
 admin.site.register(Book, BookLanguageAdmin)
-# admin.site.register(BookLanguage, BookLanguageAdmin)
 
 admin.site.register(Commentary)
 admin.site.register(Version)
 admin.site.register(Verse, VerseAdmin)
 admin.site.register(BibleRead, BibleReadAdmin)
 admin.site.register(SpiritProphecy, SpiritProphecyLanguageAdmin)
-admin.site.register(SpiritProphecyChapter)
+admin.site.register(SpiritProphecyChapter, SpiritProphecyChapterLanguageAdmin)
 admin.site.register(SpiritProphecyRead)
 admin.site.register(Chapter)
 admin.site.register(Application)

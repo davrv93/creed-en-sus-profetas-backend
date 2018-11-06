@@ -21,6 +21,12 @@ class SpiritProphecyChapter(models.Model):
         through='SpiritProphecyChapterLanguage', blank=True,
         related_name='spirit_prophecy_language_chapter_set'
     )
+    start_date = models.DateField(
+        blank=True, null=True
+    )
+    end_date = models.DateField(
+        blank=True, null=True
+    )
 
     class Meta:
         verbose_name = 'SpiritProphecyChapter'
@@ -48,6 +54,8 @@ class SpiritProphecyChapterLanguage(models.Model):
         related_name='spirit_prophecy_chapter_language_language_set',
         blank=False, null=False,
         on_delete=models.PROTECT)
+    data = models.TextField(
+        blank=False, null=False)
 
     class Meta:
         verbose_name = 'SpiritProphecyChapterLanguage'
