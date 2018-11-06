@@ -48,7 +48,7 @@ class BookLanguageResource(resources.ModelResource):
 
 class BookLanguageAdmin(ImportExportModelAdmin):
     resource_class = BookLanguageResource
-    inlines = (BookLanguageInLine,)
+    # inlines = (BookLanguageInLine,)
 
 
 class VerseAdmin(admin.ModelAdmin):
@@ -100,8 +100,8 @@ admin.site.register(CommentaryVerse, CommentaryVerseAdmin)
 # Register your models here.
 admin.site.register(Testament)
 admin.site.register(Language)
-admin.site.register(Book, BookLanguageAdmin)
-# admin.site.register(BookLanguage, BookLanguageAdmin)
+# admin.site.register(Book, BookLanguageAdmin)
+admin.site.register(BookLanguage, BookLanguageAdmin)
 
 admin.site.register(Commentary)
 admin.site.register(Version)
