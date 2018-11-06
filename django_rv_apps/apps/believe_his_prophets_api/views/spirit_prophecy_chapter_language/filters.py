@@ -15,6 +15,16 @@ class SpiritProphecyChapterLanguageFilter(django_filters.FilterSet):
         to_field_name='code_iso'
     )
 
+    start_date = filters.DateFilter(
+        field_name='spirit_prophecy_chapter__start_date',
+        lookup_expr='lte'
+    )
+    end_date = filters.DateFilter(
+        field_name='spirit_prophecy_chapter__end_date',
+        lookup_expr='gte'
+
+    )
+
     class Meta:
         model = SpiritProphecyChapterLanguage
         fields = ('id', 'spirit_prophecy_chapter__start_date',
