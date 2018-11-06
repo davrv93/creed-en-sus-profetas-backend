@@ -12,39 +12,50 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='Entidad',
-            fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('nombre', models.CharField(max_length=60)),
-                ('nombre_corto', models.CharField(max_length=60)),
-                ('logo', models.ImageField(blank=True, default='logo/default.png', null=True, upload_to='entidad')),
-                ('estado', models.CharField(blank=True, max_length=1, null=True)),
-                ('nombre_variante', models.UUIDField(blank=True, db_column='nombre_variante_id', null=True)),
-            ],
-            options={
-                'verbose_name_plural': 'entidad',
-                'verbose_name': 'entidad',
-            },
-        ),
+        # migrations.CreateModel(
+        #     name='Entidad',
+        #     fields=[
+        #         ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+        #         ('nombre', models.CharField(max_length=60)),
+        #         ('nombre_corto', models.CharField(max_length=60)),
+        #         ('logo', models.ImageField(blank=True, default='logo/default.png', null=True, upload_to='entidad')),
+        #         ('estado', models.CharField(blank=True, max_length=1, null=True)),
+        #         ('nombre_variante', models.UUIDField(blank=True, db_column='nombre_variante_id', null=True)),
+        #     ],
+        #     options={
+        #         'verbose_name_plural': 'entidad',
+        #         'verbose_name': 'entidad',
+        #     },
+        # ),
         migrations.CreateModel(
             name='Hierarchy',
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('logo', models.ImageField(blank=True, default='logo/default.png', null=True, upload_to='logos')),
+                ('id', models.UUIDField(default=uuid.uuid4,
+                                        editable=False, primary_key=True, serialize=False)),
+                ('logo', models.ImageField(blank=True,
+                                           default='logo/default.png', null=True, upload_to='logos')),
                 ('code', models.CharField(max_length=60, unique=True)),
                 ('fiscal_creation_date', models.DateField(blank=True, null=True)),
-                ('fiscal_address', models.CharField(blank=True, max_length=40, null=True)),
-                ('resolution', models.CharField(blank=True, max_length=60, null=True)),
-                ('authorization', models.CharField(blank=True, max_length=60, null=True)),
+                ('fiscal_address', models.CharField(
+                    blank=True, max_length=40, null=True)),
+                ('resolution', models.CharField(
+                    blank=True, max_length=60, null=True)),
+                ('authorization', models.CharField(
+                    blank=True, max_length=60, null=True)),
                 ('is_active', models.BooleanField(default=True)),
                 ('order', models.IntegerField(default=1)),
-                ('latitude', models.CharField(blank=True, max_length=1000, null=True)),
-                ('longitude', models.CharField(blank=True, max_length=1000, null=True)),
-                ('ubigeo', models.UUIDField(blank=True, db_column='ubigeo_id', null=True)),
-                ('legal_person', models.UUIDField(blank=True, db_column='legal_person_id', null=True)),
-                ('area_desempenio', models.UUIDField(blank=True, db_column='area_desempenio_id', null=True)),
-                ('entity', models.ForeignKey(blank=True, db_column='entity_id', null=True, on_delete=django.db.models.deletion.PROTECT, to='believe_his_prophets.Entidad')),
+                ('latitude', models.CharField(
+                    blank=True, max_length=1000, null=True)),
+                ('longitude', models.CharField(
+                    blank=True, max_length=1000, null=True)),
+                ('ubigeo', models.UUIDField(
+                    blank=True, db_column='ubigeo_id', null=True)),
+                ('legal_person', models.UUIDField(
+                    blank=True, db_column='legal_person_id', null=True)),
+                ('area_desempenio', models.UUIDField(
+                    blank=True, db_column='area_desempenio_id', null=True)),
+                ('entity', models.ForeignKey(blank=True, db_column='entity_id', null=True,
+                                             on_delete=django.db.models.deletion.PROTECT, to='believe_his_prophets.Entidad')),
             ],
             options={
                 'verbose_name_plural': 'hierarchys',
@@ -54,12 +65,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='HierarchyType',
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                ('id', models.UUIDField(default=uuid.uuid4,
+                                        editable=False, primary_key=True, serialize=False)),
                 ('name', models.CharField(max_length=60)),
                 ('state', models.CharField(blank=True, max_length=10, null=True)),
                 ('connector', models.CharField(blank=True, max_length=30, null=True)),
-                ('abbreviation', models.CharField(blank=True, max_length=10, null=True)),
-                ('code_hierarchy_type', models.CharField(blank=True, max_length=50, null=True)),
+                ('abbreviation', models.CharField(
+                    blank=True, max_length=10, null=True)),
+                ('code_hierarchy_type', models.CharField(
+                    blank=True, max_length=50, null=True)),
             ],
             options={
                 'verbose_name_plural': 'hierarchy types',
@@ -70,15 +84,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Sucursal',
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                ('id', models.UUIDField(default=uuid.uuid4,
+                                        editable=False, primary_key=True, serialize=False)),
                 ('nombre', models.CharField(max_length=100)),
                 ('direccion', models.CharField(max_length=300)),
                 ('referencia', models.CharField(max_length=300)),
                 ('latitud', models.CharField(max_length=500)),
                 ('longitud', models.CharField(max_length=500)),
                 ('estado', models.CharField(blank=True, max_length=2, null=True)),
-                ('tipo_sucursal', models.UUIDField(blank=True, db_column='tipo_sucursal_id', null=True)),
-                ('ubigeo', models.UUIDField(blank=True, db_column='ubigeo_id', null=True)),
+                ('tipo_sucursal', models.UUIDField(
+                    blank=True, db_column='tipo_sucursal_id', null=True)),
+                ('ubigeo', models.UUIDField(
+                    blank=True, db_column='ubigeo_id', null=True)),
             ],
             options={
                 'verbose_name_plural': 'sucursal',
@@ -89,21 +106,25 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='hierarchy',
             name='hierarchy_type',
-            field=models.ForeignKey(db_column='hierarchy_type_id', on_delete=django.db.models.deletion.PROTECT, to='believe_his_prophets.HierarchyType'),
+            field=models.ForeignKey(db_column='hierarchy_type_id',
+                                    on_delete=django.db.models.deletion.PROTECT, to='believe_his_prophets.HierarchyType'),
         ),
         migrations.AddField(
             model_name='hierarchy',
             name='parent',
-            field=models.ForeignKey(blank=True, db_column='parent_id', null=True, on_delete=django.db.models.deletion.PROTECT, related_name='childrens', to='believe_his_prophets.Hierarchy'),
+            field=models.ForeignKey(blank=True, db_column='parent_id', null=True, on_delete=django.db.models.deletion.PROTECT,
+                                    related_name='childrens', to='believe_his_prophets.Hierarchy'),
         ),
         migrations.AddField(
             model_name='hierarchy',
             name='sucursal',
-            field=models.ForeignKey(blank=True, db_column='sucursal_id', null=True, on_delete=django.db.models.deletion.PROTECT, to='believe_his_prophets.Sucursal'),
+            field=models.ForeignKey(blank=True, db_column='sucursal_id', null=True,
+                                    on_delete=django.db.models.deletion.PROTECT, to='believe_his_prophets.Sucursal'),
         ),
         migrations.AddField(
             model_name='entidad',
             name='hierarchy_type',
-            field=models.ForeignKey(db_column='hierarchy_type_id', on_delete=django.db.models.deletion.PROTECT, to='believe_his_prophets.HierarchyType'),
+            field=models.ForeignKey(db_column='hierarchy_type_id',
+                                    on_delete=django.db.models.deletion.PROTECT, to='believe_his_prophets.HierarchyType'),
         ),
     ]
