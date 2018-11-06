@@ -12,21 +12,24 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        # migrations.CreateModel(
-        #     name='Entidad',
-        #     fields=[
-        #         ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-        #         ('nombre', models.CharField(max_length=60)),
-        #         ('nombre_corto', models.CharField(max_length=60)),
-        #         ('logo', models.ImageField(blank=True, default='logo/default.png', null=True, upload_to='entidad')),
-        #         ('estado', models.CharField(blank=True, max_length=1, null=True)),
-        #         ('nombre_variante', models.UUIDField(blank=True, db_column='nombre_variante_id', null=True)),
-        #     ],
-        #     options={
-        #         'verbose_name_plural': 'entidad',
-        #         'verbose_name': 'entidad',
-        #     },
-        # ),
+        migrations.CreateModel(
+            name='Entidad',
+            fields=[
+                ('id', models.UUIDField(default=uuid.uuid4,
+                                        editable=False, primary_key=True, serialize=False)),
+                ('nombre', models.CharField(max_length=60)),
+                ('nombre_corto', models.CharField(max_length=60)),
+                ('logo', models.ImageField(blank=True,
+                                           default='logo/default.png', null=True, upload_to='entidad')),
+                ('estado', models.CharField(blank=True, max_length=1, null=True)),
+                ('nombre_variante', models.UUIDField(
+                    blank=True, db_column='nombre_variante_id', null=True)),
+            ],
+            options={
+                'verbose_name_plural': 'entidad',
+                'verbose_name': 'entidad',
+            },
+        ),
         migrations.CreateModel(
             name='Hierarchy',
             fields=[
