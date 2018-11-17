@@ -6,5 +6,9 @@ class ChapterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Chapter
-        fields = '__all__'
+        fields = ('id','book','language',
+        'chapter','commentary_html','commentary',
+        'commentary_file','commentary_url')
+
+
 
