@@ -1,8 +1,13 @@
 
 from django.db import models
-from django.db.models.deletion import ProtectedError
+
 from .book import Book
 from .language import Language
+
+from gdstorage.storage import GoogleDriveStorage
+
+gd_storage = GoogleDriveStorage()
+
 
 class Chapter(models.Model):
     id = models.AutoField(
@@ -18,8 +23,11 @@ class Chapter(models.Model):
         on_delete=models.PROTECT)
     chapter = models.IntegerField(
         blank=False, null=False)
+
     audio = models.FileField(
-        blank=True, null=True)
+        blank=True, null=True,
+        upload_to = 'audios/', storage = gd_storage)
+
     commentary_html= models.TextField(
         blank=True, null=True
     )
@@ -56,10 +64,3 @@ class Chapter(models.Model):
         return (self.book.__str__() + '-' + str(self.chapter)
                 + '-'+str(self.language.__str__())
                )
-
-    def delete(self, *args, **kwargs):
-        try:
-            super(Chapter, self).delete(*args, **kwargs)
-        except ProtectedError as e:
-            return (self.book.__str__() + '-' + self.chapter
-                )

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'gdstorage',
     'rest_framework',
     'rest_framework_swagger',
     'corsheaders',  # deactive for manage.py dumpdata > ...
@@ -176,3 +177,6 @@ REST_FRAMEWORK = {
 IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 INTERNAL_IPS = '127.0.0.1'
+
+GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE =os.path.join(BASE_DIR, 'credentials/drive/creed-en-sus-profetas-b140edb090be.json')
+
