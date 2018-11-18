@@ -33,7 +33,7 @@ class AudioMixin(object):
                 language__code_iso=instance.language.code_iso).values_list('data',flat=True)]
 
 
-            verses = ' '.join([x['data'] for x in verses])
+            verses = ' '.join([x for x in verses])
 
 
             data = dict()
