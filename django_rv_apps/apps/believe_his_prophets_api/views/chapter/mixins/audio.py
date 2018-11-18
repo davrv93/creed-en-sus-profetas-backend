@@ -50,19 +50,16 @@ class AudioMixin(object):
             tts = gTTS(text=verses, lang='es')
             tts.write_to_fp(audio_io)
 
+            name = str(instance.book_id) + '_' + str(instance.chapter)+'_'+str(instance.language.code_iso)
+
             file = ContentFile(audio_io.getvalue())
 
             audio =  AudioSegment.from_file(file, format="mp3")
 
-            data.update(
-                audio=audio
-            )
+            instance.audio.save(name,audio)
 
-            serializer = AudioSerializer(instance,data=data, partial=True)
 
-            serializer.is_valid(raise_exception=True)
-
-            serializer.save()
+            serializer = AudioSerializer(instance)
 
             retorno = serializer.data
 
