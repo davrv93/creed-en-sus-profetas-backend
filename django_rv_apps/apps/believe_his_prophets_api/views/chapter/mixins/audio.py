@@ -27,6 +27,9 @@ class AudioMixin(object):
             from io import BytesIO
             from pydub import AudioSegment
             from requests.packages.urllib3.exceptions import InsecureRequestWarning
+            from pydub.utils import which
+
+            AudioSegment.converter = which("ffmpeg")
 
             verses = Verse.objects.filter(
                 book=instance.book_id,
