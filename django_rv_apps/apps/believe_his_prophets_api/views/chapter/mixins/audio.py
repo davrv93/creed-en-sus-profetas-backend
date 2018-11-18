@@ -25,6 +25,7 @@ class AudioMixin(object):
             import requests
             from gtts import gTTS
             from io import BytesIO
+            from pydub import AudioSegment
             from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
             verses = Verse.objects.filter(
@@ -45,8 +46,10 @@ class AudioMixin(object):
             tts = gTTS(text=verses, lang='es')
             tts.write_to_fp(audio_io)
 
+            audio =  AudioSegment.from_file(audio_io, format="mp3")
+
             data.update(
-                audio=audio_io
+                audio=audio
             )
 
             serializer = AudioSerializer(instance,data=data, partial=True)
