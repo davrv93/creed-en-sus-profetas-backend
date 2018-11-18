@@ -28,8 +28,9 @@ class AudioMixin(object):
             from pydub import AudioSegment
             from requests.packages.urllib3.exceptions import InsecureRequestWarning
             from pydub.utils import which
+            from django.core.files.base import ContentFile
 
-            AudioSegment.converter = which("ffmpeg")
+            #AudioSegment.converter = which("ffmpeg")
 
             verses = Verse.objects.filter(
                 book=instance.book_id,
@@ -49,7 +50,9 @@ class AudioMixin(object):
             tts = gTTS(text=verses, lang='es')
             tts.write_to_fp(audio_io)
 
-            audio =  AudioSegment.from_file(audio_io, format="mp3")
+            file = ContentFile(audio_io.getvalue())
+
+            audio =  AudioSegment.from_file(file, format="mp3")
 
             data.update(
                 audio=audio
