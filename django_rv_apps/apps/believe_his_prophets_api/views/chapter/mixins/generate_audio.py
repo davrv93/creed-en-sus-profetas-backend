@@ -10,7 +10,6 @@ class AudioMixin(object):
     def audio(self, request, pk=None):
 
         instance = self.get_queryset().get(pk=pk)
-        print('instance.id',instance.id)
         retorno = dict()
 
         if instance.audio:

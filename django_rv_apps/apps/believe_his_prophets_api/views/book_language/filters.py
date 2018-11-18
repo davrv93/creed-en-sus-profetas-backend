@@ -6,7 +6,6 @@ from django_rv_apps.apps.believe_his_prophets.models.book import Book, BookLangu
 
 from django_rv_apps.apps.believe_his_prophets.models.language import Language
 
-
 class BookLanguageFilter(django_filters.FilterSet):
 
     book = filters.ModelChoiceFilter(
