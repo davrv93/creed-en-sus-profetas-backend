@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac9c882f-eafb-4eb3-85a7-6f7b7ca2c3ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/generate_audio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/book_language/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/book_language/filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/audio.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/audio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/generate_audio.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/generate_audio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/serializers.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,26 +22,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="14" />
+          <entry key="py" value="19" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="14" />
+          <entry key="Python" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="687" />
+          <entry key="py" value="1045" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="687" />
+          <entry key="Python" value="1045" />
         </counts>
       </usages-collector>
     </session>
@@ -57,18 +55,6 @@
               <caret lean-forward="true" />
               <folding>
                 <element signature="e#1#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/book/filters.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,21 +75,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/bible_reading/filters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/audio.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,8 +87,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/generate_audio.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+            <state>
+              <caret lean-forward="true" selection-end-line="57" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/audio.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -122,10 +109,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            <state relative-caret-position="237">
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -133,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/filters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="225">
+              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -146,17 +142,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements/local.txt">
+        <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/bible_reading/mixins/picture.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="270">
+              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements/prod.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/bible_reading/mixins/reading.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="58" column="71" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="58" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -172,12 +178,12 @@
         <option value="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets/models/chapter.py" />
         <option value="$PROJECT_DIR$/.env/lib/python3.6/site-packages/gdstorage/storage.py" />
         <option value="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/views.py" />
-        <option value="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/serializers.py" />
         <option value="$PROJECT_DIR$/requirements/prod.txt" />
-        <option value="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/generate_audio.py" />
-        <option value="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/audio.py" />
         <option value="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/book_language/filters.py" />
         <option value="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/filters.py" />
+        <option value="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/serializers.py" />
+        <option value="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/generate_audio.py" />
+        <option value="$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/audio.py" />
       </list>
     </option>
   </component>
@@ -224,6 +230,25 @@
               <item name="apps" type="462c0819:PsiDirectoryNode" />
               <item name="believe_his_prophets_api" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="creed-en-sus-profetas-backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="creed-en-sus-profetas-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="django_rv_apps" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="believe_his_prophets_api" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="bible_reading" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="creed-en-sus-profetas-backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="creed-en-sus-profetas-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="django_rv_apps" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="believe_his_prophets_api" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="bible_reading" type="462c0819:PsiDirectoryNode" />
+              <item name="mixins" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="creed-en-sus-profetas-backend" type="b2602c69:ProjectViewProjectNode" />
@@ -316,6 +341,25 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24571854" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -344,33 +388,6 @@
     <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/bible_reading/mixins/picture.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="6" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements/local.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -380,35 +397,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements/prod.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/generate_audio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/audio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/bible_reading/filters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/book/filters.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -442,10 +430,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/filters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="225">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/bible_reading/mixins/picture.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/bible_reading/filters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/bible_reading/mixins/reading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="58" column="71" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="58" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/generate_audio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" selection-end-line="57" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/audio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>

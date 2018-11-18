@@ -11,4 +11,12 @@ class ChapterSerializer(serializers.ModelSerializer):
         'commentary_file','commentary_url')
 
 
+class AudioSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Chapter
+        fields = ('id','audio')
+
+
+
 
