@@ -27,10 +27,10 @@ class AudioMixin(object):
             from io import BytesIO
             from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
-            verses = [Verse.objects.filter(
+            verses = Verse.objects.filter(
                 book=instance.book_id,
                 chapter=instance.chapter,
-                language__code_iso=instance.language.code_iso).values_list('data',flat=True)]
+                language__code_iso=instance.language.code_iso).values_list('data',flat=True)
 
 
             verses = ' '.join([x for x in verses])
