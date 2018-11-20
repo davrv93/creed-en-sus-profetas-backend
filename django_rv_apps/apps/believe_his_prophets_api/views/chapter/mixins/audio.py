@@ -13,6 +13,18 @@ class AudioMixin(object):
     @action(url_path='audio', methods=['GET'], detail=True)
     def audio(self, request, pk=None):
 
+        def speed_change(sound, speed=1.0):
+            # Manually override the frame_rate. This tells the computer how many
+            # samples to play per second
+            sound_with_altered_frame_rate = sound._spawn(sound.raw_data, overrides={
+                "frame_rate": int(sound.frame_rate * speed)
+            })
+
+            # convert the sound with altered frame rate to a standard frame rate
+            # so that regular playback programs will work right. They often only
+            # know how to play audio at standard frame rate (like 44.1k)
+            return sound_with_altered_frame_rate.set_frame_rate(sound.frame_rate)
+
         instance = self.get_queryset().get(pk=pk)
         retorno = dict()
 
@@ -23,12 +35,16 @@ class AudioMixin(object):
         else:
 
             import requests
+            from django.core.files.base import ContentFile
             from gtts import gTTS
             from io import BytesIO
             from pydub import AudioSegment
-            from requests.packages.urllib3.exceptions import InsecureRequestWarning
             from pydub.utils import which
-            from django.core.files.base import ContentFile
+            from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+
+
+            code_iso = str(instance.language.code_iso).lower()
 
             #AudioSegment.converter = which("ffmpeg")
 
@@ -40,24 +56,27 @@ class AudioMixin(object):
 
             verses = ' '.join([x for x in verses])
 
-
-            data = dict()
-
             requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
             audio_io = BytesIO()
 
-            tts = gTTS(text=verses, lang='es')
+            final_io = BytesIO()
+
+            tts = gTTS(text=verses, lang=code_iso,)
+
             tts.write_to_fp(audio_io)
 
-            name = str(instance.book_id) + '_' + str(instance.chapter)+'_'+str(instance.language.code_iso)
+            name = str(instance.book_id) + '_' + str(instance.chapter)+'_'+str(instance.language.code_iso)+'.mp3'
 
             file = ContentFile(audio_io.getvalue())
 
-            audio =  AudioSegment.from_file(file, format="mp3")
+            mp3_file = AudioSegment.from_file(file, format="mp3")
 
-            instance.audio.save(name,audio)
+            slow_sound = speed_change(mp3_file, 0.98)
 
+            final_audio = slow_sound.export(name,format="mp3")
+
+            instance.audio.save(name,final_audio)
 
             serializer = AudioSerializer(instance)
 
