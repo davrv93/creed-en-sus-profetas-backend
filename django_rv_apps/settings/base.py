@@ -25,7 +25,7 @@ SECRET_KEY = 'llw6!e9*(#c*kt2h@v#e&fg#t5ai4a^rryhmr@rtk$x7k)*&t*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['davrv93.pythonanywhere.com', 'localhost', '*']
+ALLOWED_HOSTS = ['davrv93.pythonanywhere.com', 'localhost', '*', '167.99.175.219']
 
 
 # Application definition
@@ -85,6 +85,7 @@ TEMPLATES = [
 
 
 DATABASES = {
+    '''
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'davrv93$django_rv_apps',
@@ -92,6 +93,16 @@ DATABASES = {
         'PASSWORD': 'damonalbarn1',
         # Or an IP Address that your DB is hosted on
         'HOST': 'davrv93.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+    }
+    '''
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'davrv93$django_rv_apps',
+        'USER': 'davrv93',
+        'PASSWORD': 'Davrv123',
+        # Or an IP Address that your DB is hosted on
+        'HOST': '167.99.175.219',
         'PORT': '3306',
     }
 }

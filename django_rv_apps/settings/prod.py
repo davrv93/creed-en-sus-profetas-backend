@@ -1,3 +1,3 @@
 from .base import *
 
-WSGI_APPLICATION = 'django_rv_apps.wsgi.prod.application'
+WSGI_APPLICATION = 'django_rv_apps.wsgi.prod_do.application'
