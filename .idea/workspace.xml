@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac9c882f-eafb-4eb3-85a7-6f7b7ca2c3ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_rv_apps/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rv_apps/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_rv_apps/settings/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rv_apps/settings/prod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_rv_apps/wsgi/wsgi-prod-do.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rv_apps/wsgi/prod_do.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/django_rv_apps/settings/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+            <state relative-caret-position="299">
+              <caret line="111" column="3" lean-forward="true" selection-start-line="111" selection-start-column="3" selection-end-line="111" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -111,6 +108,7 @@
     <findStrings>
       <find>strip</find>
       <find>_open</find>
+      <find>cors</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -438,8 +436,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/django_rv_apps/settings/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+        <state relative-caret-position="299">
+          <caret line="111" column="3" lean-forward="true" selection-start-line="111" selection-start-column="3" selection-end-line="111" selection-end-column="3" />
         </state>
       </provider>
     </entry>

@@ -82,11 +82,8 @@ TEMPLATES = [
         },
     },
 ]
-
-
-DATABASES = {
-    '''
-    'default': {
+'''
+'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'davrv93$django_rv_apps',
         'USER': 'davrv93',
@@ -96,6 +93,10 @@ DATABASES = {
         'PORT': '3306',
     }
     '''
+
+DATABASES = {
+    
+    
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'davrv93$django_rv_apps',
@@ -108,7 +109,7 @@ DATABASES = {
 }
 
 # Password validation
-# https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
+# ttps://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
