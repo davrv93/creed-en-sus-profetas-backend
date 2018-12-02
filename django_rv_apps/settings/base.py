@@ -99,12 +99,12 @@ DATABASES = {
     
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'davrv93$django_rv_apps',
+        'NAME': 'django_rv_apps',
         'USER': 'davrv93',
         'PASSWORD': 'Davrv123',
         # Or an IP Address that your DB is hosted on
         'HOST': '167.99.175.219',
-        'PORT': '3306',
+        'PORT': '',
     }
 }
 
