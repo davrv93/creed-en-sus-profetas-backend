@@ -1,8 +1,10 @@
 
 from django.db import models
-from django.db.models.deletion import ProtectedError
 from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy import SpiritProphecy
 from django_rv_apps.apps.believe_his_prophets.models.language import Language
+from gdstorage.storage import GoogleDriveStorage
+
+gd_storage = GoogleDriveStorage()
 
 
 class SpiritProphecyChapter(models.Model):
@@ -56,6 +58,10 @@ class SpiritProphecyChapterLanguage(models.Model):
         on_delete=models.PROTECT)
     data = models.TextField(
         blank=False, null=False)
+    audio = models.FileField(
+        blank=True, null=True,
+        upload_to='audios/sp/', storage=gd_storage)
+
 
     class Meta:
         verbose_name = 'SpiritProphecyChapterLanguage'
