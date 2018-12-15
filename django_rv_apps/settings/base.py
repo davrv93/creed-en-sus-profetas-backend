@@ -190,3 +190,4 @@ INTERNAL_IPS = '127.0.0.1'
 
 GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE =os.path.join(BASE_DIR, 'credentials/drive/creed-en-sus-profetas-b140edb090be.json')
 
+USE_X_FORWARDED_HOST = True
