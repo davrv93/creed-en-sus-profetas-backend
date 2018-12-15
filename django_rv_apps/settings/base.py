@@ -25,7 +25,7 @@ SECRET_KEY = 'llw6!e9*(#c*kt2h@v#e&fg#t5ai4a^rryhmr@rtk$x7k)*&t*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['davrv93.pythonanywhere.com', 'localhost', '*', '167.99.175.219']
+ALLOWED_HOSTS = ['davrv93.pythonanywhere.com', 'localhost', '*', '167.99.175.219', 'pastorroncal.com:80', 'pastorroncal.com']
 
 
 # Application definition
