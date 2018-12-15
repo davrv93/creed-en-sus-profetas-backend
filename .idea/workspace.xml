@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac9c882f-eafb-4eb3-85a7-6f7b7ca2c3ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/django_rv_apps/settings/prod.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rv_apps/settings/prod.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,22 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/audio.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="85" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets/models/spirit_prophecy_chapter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="990">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="e#1#29#0" expanded="true" />
               </folding>
@@ -43,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/django_rv_apps/wsgi/wsgi-prod.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="16" lean-forward="true" selection-end-line="16" />
+              <caret line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -62,7 +50,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_rv_apps/settings/prod.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -72,10 +60,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env/lib/python3.6/site-packages/gdstorage/storage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5715">
+              <caret line="397" column="44" selection-start-line="397" selection-start-column="30" selection-end-line="397" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_rv_apps/settings/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
+            <state relative-caret-position="525">
+              <caret line="35" column="25" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/django_rv_apps/settings/local.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="24" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -90,18 +99,6 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets/models/chapter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" lean-forward="true" selection-start-line="6" selection-end-line="9" />
-              <folding>
-                <element signature="e#1#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -110,6 +107,8 @@
       <find>_open</find>
       <find>cors</find>
       <find>static</find>
+      <find>credenti</find>
+      <find>base_dir</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,12 +147,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="creed-en-sus-profetas-backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="creed-en-sus-profetas-backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="creed-en-sus-profetas-backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="creed-en-sus-profetas-backend" type="462c0819:PsiDirectoryNode" />
+              <item name=".env" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="creed-en-sus-profetas-backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="creed-en-sus-profetas-backend" type="462c0819:PsiDirectoryNode" />
+              <item name=".env" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="creed-en-sus-profetas-backend" type="b2602c69:ProjectViewProjectNode" />
@@ -165,6 +176,19 @@
               <item name="creed-en-sus-profetas-backend" type="462c0819:PsiDirectoryNode" />
               <item name="django_rv_apps" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="creed-en-sus-profetas-backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="creed-en-sus-profetas-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="django_rv_apps" type="462c0819:PsiDirectoryNode" />
+              <item name="credentials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="creed-en-sus-profetas-backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="creed-en-sus-profetas-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="django_rv_apps" type="462c0819:PsiDirectoryNode" />
+              <item name="credentials" type="462c0819:PsiDirectoryNode" />
+              <item name="drive" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="creed-en-sus-profetas-backend" type="b2602c69:ProjectViewProjectNode" />
@@ -187,7 +211,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -221,7 +244,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24571854" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -362,16 +384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env/lib/python3.6/site-packages/gdstorage/storage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="185" selection-start-line="185" selection-end-line="185" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets_api/views/chapter/mixins/audio.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -397,21 +409,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/django_rv_apps/apps/believe_his_prophets/models/spirit_prophecy_chapter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="990">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="e#1#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/django_rv_apps/wsgi/wsgi-prod.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="16" lean-forward="true" selection-end-line="16" />
+          <caret line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -422,23 +431,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/django_rv_apps/wsgi/local.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/django_rv_apps/wsgi/prod.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/django_rv_apps/settings/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/django_rv_apps/settings/prod.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env/lib/python3.6/site-packages/gdstorage/storage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5715">
+          <caret line="397" column="44" selection-start-line="397" selection-start-column="30" selection-end-line="397" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_rv_apps/settings/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_rv_apps/wsgi/local.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_rv_apps/settings/local.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="24" />
         </state>
       </provider>
     </entry>
