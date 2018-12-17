@@ -10,7 +10,7 @@ from rest_framework import viewsets
 from django_rv_apps.apps.believe_his_prophets.models.verse import Verse
 from django_rv_apps.apps.believe_his_prophets.models.bible_read import BibleRead
 from django_rv_apps.apps.believe_his_prophets.models.chapter import Chapter
-
+from django_rv_apps.apps.believe_his_prophets.models.language import Language
 from django_rv_apps.apps.believe_his_prophets_api.views.bible_reading.serializers\
     import BibleReadSerializer
 from django_rv_apps.apps.believe_his_prophets_api.views.bible_reading.filters \
@@ -79,6 +79,20 @@ class BibleReadingView(APIView):
 
         retorno.update(
             verses=serializer.data
+        )
+
+        language = Language.objects.get(code_iso=code_iso)
+
+
+
+        i_chapter = Chapter.objects.get_or_create(
+            book=book,
+            language=language,
+            chapter=chapter
+        )
+
+        retorno.update(
+            chapter_id=i_chapter.id
         )
 
 
