@@ -5,6 +5,7 @@ from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy import Spir
 
 class SpiritProphecyChapterLanguageSerializer(serializers.ModelSerializer):
     book_name = serializers.SerializerMethodField()
+    spirit_prophecy_chapter = serializers.CharField(source='spirit_prophecy_chapter.chapter')
 
     class Meta:
         model = SpiritProphecyChapterLanguage
