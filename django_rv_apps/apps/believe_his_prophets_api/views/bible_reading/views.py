@@ -85,11 +85,13 @@ class BibleReadingView(APIView):
 
 
 
-        i_chapter = Chapter.objects.get_or_create(
+        i_chapter, condition = Chapter.objects.get_or_create(
             book=book,
             language=language,
             chapter=chapter
         )
+
+        print(i_chapter,'i_chapter')
 
         retorno.update(
             chapter_id=i_chapter.id
