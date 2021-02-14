@@ -15,6 +15,7 @@ class SpiritProphecyRead(models.Model):
         db_column='spirit_prophecy_chapter_id',
         blank=True, null=True,
         on_delete=models.PROTECT)
+    archivo= models.FileField(upload_to="files/")
     data = models.TextField(
         blank=False, null=False)
     date = models.DateField(

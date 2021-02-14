@@ -11,6 +11,7 @@ class SpiritProphecyChapter(models.Model):
     id = models.AutoField(
         primary_key=True,
         editable=False)
+    archivo =models.FileField(upload_to="files/")
     spirit_prophecy = models.ForeignKey(
         SpiritProphecy,
         db_column='spirit_prophecy_id',
