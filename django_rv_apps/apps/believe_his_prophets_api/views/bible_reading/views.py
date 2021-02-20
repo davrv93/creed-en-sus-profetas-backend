@@ -168,7 +168,7 @@ class AudioView(APIView):
         from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 
-        verses = request.POST.get("contenido", "")
+        verses = request.data.get("contenido", "")
 
         requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
