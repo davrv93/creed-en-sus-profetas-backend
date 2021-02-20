@@ -44,6 +44,7 @@ class SpiritProphecyChapterLanguage(models.Model):
     id = models.AutoField(
         primary_key=True,
         editable=False)
+    archivo = models.FileField(upload_to='files')
     name = models.CharField(
         max_length=250,
         blank=False, null=False)
