@@ -17,6 +17,7 @@ from .views.spirit_prophecy_read_view import SpiritProphecyReadViewSet
 from .views.application_view import ApplicationViewSet
 from .views.bible_reading.views import ReadingViewSet
 from .views.bible_reading.views import BibleReadingView
+from .views.bible_reading.views import AudioView
 
 from .views.spirit_prophecy_chapter_language.views import SpiritProphecyChapterLanguageViewSet
 
@@ -42,5 +43,6 @@ router.register(r'application', ApplicationViewSet)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^bible_readings/$',BibleReadingView.as_view(), name='bible_readings'),
+    url(r'^audio/$',AudioView.as_view(), name='audio'),
 
 ]
