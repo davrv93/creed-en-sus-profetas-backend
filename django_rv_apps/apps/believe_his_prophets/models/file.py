@@ -12,6 +12,9 @@ class File(models.Model):
     id = models.AutoField(
          primary_key=True,
          editable=False)
+    contenido = models.TextField(
+        
+    )
     
     audio = models.FileField(
         blank=True, null=True,
