@@ -6,6 +6,7 @@ from django_rv_apps.apps.believe_his_prophets.models.language import Language
 from django_rv_apps.apps.believe_his_prophets.models.book import Book, BookLanguage
 from django_rv_apps.apps.believe_his_prophets.models.version import Version
 from django_rv_apps.apps.believe_his_prophets.models.verse import Verse
+from django_rv_apps.apps.believe_his_prophets.models.file import File
 from django_rv_apps.apps.believe_his_prophets.models.bible_read import BibleRead
 from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy import SpiritProphecy
 from django_rv_apps.apps.believe_his_prophets.models.spirit_prophecy_chapter import SpiritProphecyChapter, SpiritProphecyChapterLanguage
@@ -121,6 +122,7 @@ admin.site.register(SpiritProphecyRead)
 admin.site.register(Chapter)
 admin.site.register(Application)
 admin.site.register(Emotion)
+admin.site.register(File)
 admin.site.register(Sentiment)
 admin.site.register(AnalysisVerse, EmotionAnalysisVerseAdmin)
 admin.site.register(AnalysisChapter, EmotionAnalysisChapterAdmin)

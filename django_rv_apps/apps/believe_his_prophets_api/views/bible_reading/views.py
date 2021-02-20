@@ -10,6 +10,7 @@ from rest_framework import viewsets
 from django_rv_apps.apps.believe_his_prophets.models.verse import Verse
 from django_rv_apps.apps.believe_his_prophets.models.bible_read import BibleRead
 from django_rv_apps.apps.believe_his_prophets.models.chapter import Chapter
+from django_rv_apps.apps.believe_his_prophets.models.file import File
 from django_rv_apps.apps.believe_his_prophets.models.language import Language
 from django_rv_apps.apps.believe_his_prophets_api.views.bible_reading.serializers\
     import BibleReadSerializer
@@ -19,6 +20,8 @@ from django_rv_apps.apps.believe_his_prophets_api.views.bible_reading.mixins.rea
     import ReadingMixin
 from django_rv_apps.apps.believe_his_prophets_api.views.bible_reading.mixins.picture \
     import PictureMixin
+from django_rv_apps.apps.believe_his_prophets_api.views.chapter.serializers import AudioSerializer
+from django_rv_apps.apps.believe_his_prophets_api.views.chapter.serializers import FileSerializer
 
 from django_rv_apps.apps.believe_his_prophets_api.views.verse.serializers import VerseSerializer
 
@@ -99,3 +102,55 @@ class BibleReadingView(APIView):
 
 
         return Response(retorno)
+
+class AudioView(APIView):
+    #authentication_classes = (authentication.TokenAuthentication,)
+    permission_classes = ()
+
+    def get(self, request, format=None):
+
+        import requests
+        from django.core.files.base import ContentFile
+        from gtts import gTTS
+        from io import BytesIO
+        from pydub import AudioSegment
+        from pydub.utils import which
+        from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+
+
+       
+        verses = ' Hola que tal'
+
+        requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+        audio_io = BytesIO()
+
+        final_io = BytesIO()
+
+        tts = gTTS(text=verses, lang='es',)
+
+        tts.write_to_fp(audio_io)
+
+        name = 'testfile.mp3'
+
+        file = ContentFile(audio_io.getvalue())
+
+        instance = File()
+
+        instance.save
+
+        #mp3_file = AudioSegment.from_file(file, format="mp3")
+
+        #slow_sound = speed_change(mp3_file, 0.98)
+
+        #final_audio = slow_sound.export(name,format="mp3")
+
+        instance.audio.save(name,file)
+
+        serializer = FileSerializer(instance)
+
+        retorno = serializer.data
+
+
+        return Response(data=retorno)
