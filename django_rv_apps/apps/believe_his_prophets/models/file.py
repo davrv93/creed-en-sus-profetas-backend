@@ -25,7 +25,7 @@ class File(models.Model):
         verbose_name = 'File'
         db_table = 'believe_file'
         verbose_name_plural = 'Files'
-
+'''
 @receiver(post_save, sender=File)
 def post_save(sender, instance=None, created=False, **kwargs):
 
@@ -68,3 +68,4 @@ def post_save(sender, instance=None, created=False, **kwargs):
 
     finally:
         del instance._dirty
+'''
