@@ -109,6 +109,7 @@ class AudioView(APIView):
 
     def get(self, request, format=None):
 
+
         import requests
         from django.core.files.base import ContentFile
         from gtts import gTTS
@@ -121,6 +122,53 @@ class AudioView(APIView):
 
        
         verses = ' Hola que tal'
+
+        requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+        audio_io = BytesIO()
+
+        final_io = BytesIO()
+
+        tts = gTTS(text=verses, lang='es',)
+
+        tts.write_to_fp(audio_io)
+
+        name = 'testfile.mp3'
+
+        file = ContentFile(audio_io.getvalue())
+
+        instance = File()
+
+        instance.save
+
+        #mp3_file = AudioSegment.from_file(file, format="mp3")
+
+        #slow_sound = speed_change(mp3_file, 0.98)
+
+        #final_audio = slow_sound.export(name,format="mp3")
+
+        instance.audio.save(name,file)
+
+        serializer = FileSerializer(instance)
+
+        retorno = serializer.data
+
+
+        return Response(data=retorno)
+
+    def post(self, request, format=None):
+        
+
+        import requests
+        from django.core.files.base import ContentFile
+        from gtts import gTTS
+        from io import BytesIO
+        from pydub import AudioSegment
+        from pydub.utils import which
+        from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+
+        verses = request.POST.get("contenido", "")
 
         requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
