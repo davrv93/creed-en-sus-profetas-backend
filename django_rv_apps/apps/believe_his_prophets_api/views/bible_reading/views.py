@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework import authentication, permissions
 from django.contrib.auth.models import User
 
+import pyttsx3
 
 from django_filters import rest_framework as django_filters
 from rest_framework import viewsets
@@ -118,48 +119,82 @@ class AudioView(APIView):
         from pydub import AudioSegment
         from pydub.utils import which
         from requests.packages.urllib3.exceptions import InsecureRequestWarning
+        import uuid
+        import os
 
+        PROJECT_PATH = os.path.abspath(os.path.dirname(__name__))
+        module_dir = os.path.dirname(__file__)  # get current directory
 
+        filename = str(uuid.uuid4())
+        engine = pyttsx3.init()
+        engine.setProperty('rate', 110)
+        engine.setProperty('voice', 'spanish')
+        engine.setProperty('volume', 1)
+        nombre = filename+".mp3"
 
-       
-        verses = ' Hola que tal'
-
-        requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-
-        audio_io = BytesIO()
-
-        final_io = BytesIO()
-
-        tts = gTTS(text=verses, lang='es',)
-
-        tts.write_to_fp(audio_io)
-
-        name = 'testfile.mp3'
-
-        file = ContentFile(audio_io.getvalue())
+        engine.save_to_file(text="Hola que tal",filename=nombre)
+        engine.runAndWait()
+        file_path = os.path.join(PROJECT_PATH, nombre)
+        from os.path import basename
+        from django.core.files import File as File2
 
         instance = File()
 
         instance.save
 
-        #mp3_file = AudioSegment.from_file(file, format="mp3")
 
-        #slow_sound = speed_change(mp3_file, 0.98)
-
-        #final_audio = slow_sound.export(name,format="mp3")
-
-        instance.audio.save(name,file)
+        instance.audio.save(basename(file_path), content=File2(open(file_path, 'rb')))
 
         serializer = FileSerializer(instance)
 
         retorno = serializer.data
 
-
         return Response(data=retorno)
 
     @csrf_exempt
     def post(self, request, format=None):
+
+          import requests
+        from django.core.files.base import ContentFile
+        from gtts import gTTS
+        from io import BytesIO
+        from pydub import AudioSegment
+        from pydub.utils import which
+        from requests.packages.urllib3.exceptions import InsecureRequestWarning
+        import uuid
+        import os
+
+        PROJECT_PATH = os.path.abspath(os.path.dirname(__name__))
+        module_dir = os.path.dirname(__file__)  # get current directory
+
+        filename = str(uuid.uuid4())
+        engine = pyttsx3.init()
+        engine.setProperty('rate', 110)
+        engine.setProperty('voice', 'spanish')
+        engine.setProperty('volume', 1)
+        nombre = filename+".mp3"
+        verses = request.data.get("contenido", "")
+
+        engine.save_to_file(text=verses,filename=nombre)
+        engine.runAndWait()
+        file_path = os.path.join(PROJECT_PATH, nombre)
+        from os.path import basename
+        from django.core.files import File as File2
+
+        instance = File()
+
+        instance.save
+
+
+        instance.audio.save(basename(file_path), content=File2(open(file_path, 'rb')))
+
+        serializer = FileSerializer(instance)
+
+        retorno = serializer.data
+
+        return Response(data=retorno)
         
+        '''
 
         import requests
         from django.core.files.base import ContentFile
@@ -204,3 +239,4 @@ class AudioView(APIView):
 
 
         return Response(data=retorno)
+        '''
