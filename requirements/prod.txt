@@ -86,7 +86,7 @@ pyOpenSSL==17.5.0
 pyparsing==2.2.0
 pysolr==3.7.0
 python-dateutil==2.6.1
-pyttsx3==2.7
+pyttsx3==2.90
 pytz==2017.2
 PyYAML==3.13
 requests==2.13.0
@@ -106,3 +106,4 @@ wrapt==1.10.11
 xlrd==1.1.0
 xlwt==1.3.0
 pydub==0.23.0
+pywin32==300
