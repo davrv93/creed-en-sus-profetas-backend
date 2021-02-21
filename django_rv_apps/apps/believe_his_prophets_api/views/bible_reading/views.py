@@ -182,8 +182,12 @@ class AudioView(APIView):
         from django.core.files import File as File2
 
         instance = File()
+        import time
+
 
         instance.save
+
+        time.sleep(3)
 
 
         instance.audio.save(basename(file_path), content=File2(open(file_path, 'rb')))
