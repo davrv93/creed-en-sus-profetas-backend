@@ -8,6 +8,7 @@ from .views.chapter.views import ChapterViewSet
 from .views.language.views import LanguageViewSet
 
 from .views.testament.views import TestamentViewSet
+from django.views.decorators.csrf import csrf_exempt
 
 from .views.verse.views import VerseViewSet
 
@@ -43,6 +44,6 @@ router.register(r'application', ApplicationViewSet)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^bible_readings/$',BibleReadingView.as_view(), name='bible_readings'),
-    url(r'^audio/$',AudioView.as_view(), name='audio'),
+    url(r'^audio/$',csrf_exempt(AudioView.as_view()), name='audio'),
 
 ]
