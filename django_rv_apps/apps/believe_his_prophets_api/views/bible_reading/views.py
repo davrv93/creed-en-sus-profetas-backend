@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 
 from django_filters import rest_framework as django_filters
 from rest_framework import viewsets
+from django.views.decorators.csrf import csrf_exempt
 
 from django_rv_apps.apps.believe_his_prophets.models.verse import Verse
 from django_rv_apps.apps.believe_his_prophets.models.bible_read import BibleRead
@@ -156,6 +157,7 @@ class AudioView(APIView):
 
         return Response(data=retorno)
 
+    @csrf_exempt
     def post(self, request, format=None):
         
 
