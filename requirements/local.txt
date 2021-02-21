@@ -89,7 +89,7 @@ python-dateutil==2.6.1
 pyttsx3==2.7
 pytz==2017.2
 PyYAML==3.13
-requests==2.13.0
+requests==2.20.0
 rsa==4.0
 simplejson==3.10.0
 six==1.10.0
