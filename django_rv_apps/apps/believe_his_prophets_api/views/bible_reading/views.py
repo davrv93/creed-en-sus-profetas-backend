@@ -153,7 +153,7 @@ class AudioView(APIView):
 
     @csrf_exempt
     def post(self, request, format=None):
-
+        '''
         import requests
         from django.core.files.base import ContentFile
         from gtts import gTTS
@@ -197,8 +197,8 @@ class AudioView(APIView):
         retorno = serializer.data
 
         return Response(data=retorno)
-        
         '''
+
 
         import requests
         from django.core.files.base import ContentFile
@@ -243,4 +243,3 @@ class AudioView(APIView):
 
 
         return Response(data=retorno)
-        '''
