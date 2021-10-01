@@ -13,7 +13,7 @@ class BibleReadFilter(django_filters.FilterSet):
 
     book = filters.ModelChoiceFilter(
         queryset=Book.objects.all())
-    start_date = filters.DateFilter(method='filter_date')
+    start_date = filters.CharFilter(method='filter_date')
 
 
 
