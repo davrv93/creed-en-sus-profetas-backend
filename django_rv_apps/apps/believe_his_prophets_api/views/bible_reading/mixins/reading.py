@@ -109,7 +109,7 @@ class ReadingMixin(object):
                           text, fontcolor, font)
 
                 # img.show()
-                img.save(str(x['chapter'])+str(x['verse'])+'.png')
+                #img.save(str(x['chapter'])+str(x['verse'])+'.png')
 
             from gtts import gTTS
             import os
