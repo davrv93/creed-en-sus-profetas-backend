@@ -21,7 +21,7 @@ class BibleReadFilter(django_filters.FilterSet):
         model = BibleRead
         fields = ('id', 'book', 'start_date')
 
-    def filter_date(self, queryset, value):
+    def filter_date(self, queryset, name, value):
         t = timezone.localtime(timezone.now())
         return queryset.filter(
             start_date__year = t.year,
