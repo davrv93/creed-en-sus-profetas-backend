@@ -51,6 +51,8 @@ class BibleReadingView(APIView):
         retorno = dict()
 
         date = request.query_params.get('date')
+        if date=='2021--01':
+            date='2021-10-01'
 
         code_iso = request.query_params.get('code_iso','').upper()
 
